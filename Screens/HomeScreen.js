@@ -278,7 +278,7 @@ renderHeader(){
     return ( 
       <View>
         <Text style={{fontSize: theme.sizes.font*1.5 , fontWeight:'bold', marginHorizontal: theme.sizes.margin, padding:5, marginVertical:5}}>Discover Now</Text>
-            <TouchableOpacity activeOpacity={0.8} onPress={() => this.props.navigation.navigate('Search')}>
+            <TouchableOpacity activeOpacity={0.8} onPress={() => this.props.navigation.navigate('Welcome')}>
               <ImageBackground   
               style={[styles.flex, styles.destinationContainer, styles.shadow]}
               imageStyle={{ borderRadius: theme.sizes.radius }}

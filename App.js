@@ -94,7 +94,7 @@ const AppNavigator =  createStackNavigator({
   }
 
 }, {
-  initialRouteName: 'Home',
+  initialRouteName: 'Search',
   transitionConfig: () => fromRight(600),
 });   
 
