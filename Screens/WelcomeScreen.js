@@ -5,7 +5,7 @@ import { Text, View ,StyleSheet,Dimensions,TouchableOpacity , ImageBackground,Im
 import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view';
 import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
-import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
+
 import * as theme from '../utils/theme';
 import { Header } from 'react-navigation';
 
@@ -70,24 +70,40 @@ const styles = StyleSheet.create({
       },  
 
     header1:{
-      fontSize:18,
-      fontWeight:'300',
-      textDecorationLine:'underline',
+      fontSize:15,
+      fontWeight:'500',
+    },
+
+    caption:{
+      fontSize:10,
+      color:theme.colors.caption
     },
 
     description:{
-      fontSize:15,
-      fontWeight:'200',
-      paddingVertical:3,
-      textAlign: 'auto',
+      fontSize:13,
+      paddingVertical:5,
+      textAlign: 'justify',
       lineHeight:28
     },
 
     content:{
       marginHorizontal:theme.sizes.margin,
       backgroundColor: 'transparent',
-      marginBottom:8,
-    
+
+    },
+
+    infoContainer:{
+      borderRadius:theme.sizes.radius,
+      backgroundColor: 'rgb(242, 246, 248)',
+      margin:15,
+      padding:15
+    },
+
+    FeesContainer:{
+      borderRadius:theme.sizes.radius,
+      backgroundColor: 'white',
+      marginVertical:4,
+      padding:15
     },
 
   // styling for the scroll view content
@@ -150,31 +166,7 @@ const styles = StyleSheet.create({
         
     },
 
-    // styling for table and its content
-    tableContainer: 
-    {  
-      flex: 1, 
-       padding: 5,
-       paddingTop:15, 
-       backgroundColor: theme.colors.white,
-       borderRadius:theme.sizes.radius
-      
-    },
-
-    tableHead: 
-    {  height: 40,  backgroundColor: theme.colors.gray },
-
-    tableWrapper: 
-    { flexDirection: 'row' },
-
-    tableTitle: 
-    { flex: 1, backgroundColor: '#f6f8fa' },
-
-    tableRow: 
-    {  height: 60 },
-
-    tableText: 
-    { textAlign: 'center', padding:5 }
+    
   });
   
   export default class WelcomeScreen extends Component {
@@ -183,14 +175,9 @@ const styles = StyleSheet.create({
       this.state = { 
       showNavTitle: false ,
       sight:pinpointSight,
-      tableHead: ['', 'Adult', 'Remarks'],
-      tableTitle: ['1 day pass', '3 day pass', '7 day pass' ],
-        tableData: [
-          ['$37 (USD)', ' Valid for one day'],
-          ['$62 (USD)', 'The pass can be used for 3 separated days within 1 week'],
-          ['$72 (USD)', 'The pass can be used for 7 separated days within 1 month'],
-        ]};
+   
     }
+  }
 
 
 
@@ -215,7 +202,6 @@ _renderItem ({item, index}, parallaxProps) {
 
   
     render() {
-      const tableState = this.state;
       return (
         
           <HeaderImageScrollView
@@ -251,48 +237,48 @@ _renderItem ({item, index}, parallaxProps) {
                <View style={[styles.contentHeight]}>
                   <View style={styles.content}>
                      <Text style={styles.title}>About </Text> 
-                     <Text style={styles.description}><Text style={{fontSize:20,fontWeight:'bold',color:'black'}}>Angkor (ប្រាសាទអង្គរ) </Text>{'was the capital of the Khmer empire between the begin of the 10th and the middle of the 15th century. It is a UNESCO world heritage and streches over some 400km2 including forested area and magnificent remains of the different capitals of the Khmer Empire. They include the famous Temple of Angkor Wat and,at Angkor Thom, the Bayon Temple with its countless sculptural decorations'} </Text>  
+                 <Text style={{fontSize:16,fontWeight:'bold',color:theme.colors.black}}>Angkor (ប្រាសាទអង្គរ) </Text>    
+                <Text style={styles.description}>was the capital of the Khmer empire between the begin of the 10th and the middle of the 15th century. It is a UNESCO world heritage and streches over some 400km&#178; , including forested area and magnificent remains of the different capitals of the Khmer Empire. They include the famous Temple of Angkor Wat and,at Angkor Thom, the Bayon Temple with its countless sculptural decorations</Text>  
                   </View>
                   <View style={styles.content}>
+
                      <Text style={styles.title}>Information   
                      <MaterialCommunityIcons  name="information" color={theme.colors.gray} size={theme.sizes.font * 1.5}></MaterialCommunityIcons>
                      </Text> 
 
-                      <View>
+                      <View style={styles.infoContainer}>
                         <Text style={styles.header1}>Opening Hours</Text>  
                         <Text style={styles.description}> 7:30 am - 5:30pm</Text> 
                       </View> 
 
-                      <View>
-                        <Text style={styles.header1}>Location</Text>  
-                        <Text style={styles.description}> Siem Reap, Cambodia</Text>  
-                      </View> 
-
-                      <View>
+                      <View style={styles.infoContainer}>
                         <Text style={styles.header1}>Official Website</Text>  
                         <Text style={styles.description}> http://angkor.com.kh/</Text> 
                       </View>  
 
-                      <View>
-                     <Text style={[styles.header1]}>Entrance Fees</Text> 
-                     </View>
+                       <View style= {[styles.infoContainer,{marginBottom:10}]}>
+                         <Text style={[styles.header1]}>Entrance Fees</Text> 
+
+                        <View style={styles.FeesContainer}>   
+                        <Text style={styles.description}>1 day pass ( $37 ) </Text>
+                        <Text style={styles.caption}>Valid for one day</Text>
+                        </View>
+
+                        <View style={styles.FeesContainer}>   
+                        <Text style={styles.description}>3 days pass ( $62 ) </Text>
+                        <Text style={styles.caption}>The pass can be used for 3 separated days within 1 week</Text>
+                        </View>
+
+                        <View style={styles.FeesContainer}>   
+                        <Text style={styles.description}>7 days pass ( $72 ) </Text>
+                        <Text style={styles.caption}>The pass can be used for 7 separated days within 1 month</Text>
+                        </View>
+                       </View>
+
                   </View>
-                    <View style={styles.tableContainer}>
-                            <Table>
-                              <Row data={tableState.tableHead} flexArr={[1, 2, 4]} style={styles.tableHead} textStyle={styles.tableText}/>
-                              <TableWrapper style={styles.tableWrapper}>
-                                <Col data={tableState.tableTitle} style={styles.tableTitle} heightArr={[60,60]} textStyle={styles.tableText}/>
-                                <Rows data={tableState.tableData} flexArr={[ 2, 4]} style={styles.tableRow} textStyle={styles.tableText}/>
-                              </TableWrapper>
-                            </Table>
-                           <View style={{marginHorizontal:theme.sizes.margin}}>
-                              <Text style={styles.description}>* Free for children under 12</Text> 
-                              <Text style={styles.description}>* Free for VISA "K"</Text> 
-                           </View>
-                    </View>
 
                     <View style={styles.content}>
-                        <Text style={[styles.title,{marginBottom:10}]}>Sights </Text> 
+                        <Text style={styles.title}>Sights </Text> 
                         <View  style={{alignContent:'center',alignItems:'center'}}>
                           <Carousel
                           layout={'stack'} layoutCardOffset={8} 
