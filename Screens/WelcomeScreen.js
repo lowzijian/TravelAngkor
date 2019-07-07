@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     infoContainer:{
       borderRadius:theme.sizes.radius,
       backgroundColor: 'rgb(242, 246, 248)',
-      margin:15,
+      marginBottom:10,
       padding:15
     },
 
@@ -205,7 +205,7 @@ _renderItem ({item, index}, parallaxProps) {
       return (
         
           <HeaderImageScrollView
-            showsVerticalScrollIndicator={false}
+            showsVerticalScrollIndicator={true}
             maxHeight={MAX_HEIGHT}
             minHeight={MIN_HEIGHT}
             maxOverlayOpacity={0.6}
@@ -256,7 +256,7 @@ _renderItem ({item, index}, parallaxProps) {
                         <Text style={styles.description}> http://angkor.com.kh/</Text> 
                       </View>  
 
-                       <View style= {[styles.infoContainer,{marginBottom:10}]}>
+                       <View style= {[styles.infoContainer]}>
                          <Text style={[styles.header1]}>Entrance Fees</Text> 
 
                         <View style={styles.FeesContainer}>   

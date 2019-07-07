@@ -52,7 +52,7 @@ const AppNavigator =  createStackNavigator({
       headerLeft:   (  
         <View style={[styles.flex, styles.row, styles.header]}>     
         <TouchableOpacity  onPress={ () => { navigation.goBack() }} >
-          <FontAwesome name="chevron-left" color={theme.colors.white} size={theme.sizes.font * 1.5} />
+          <FontAwesome name="chevron-left" color={theme.colors.black} size={theme.sizes.font * 1.5} />
         </TouchableOpacity>
       
       </View>
