@@ -79,12 +79,15 @@ const styles = StyleSheet.create({
       fontSize:15,
       fontWeight:'200',
       paddingVertical:3,
+      textAlign: 'auto',
+      lineHeight:28
     },
 
     content:{
       marginHorizontal:theme.sizes.margin,
       backgroundColor: 'transparent',
-      marginBottom:8
+      marginBottom:8,
+    
     },
 
   // styling for the scroll view content
@@ -95,7 +98,7 @@ const styles = StyleSheet.create({
     },
 
     contentHeight:{
-    height:1100,
+    height:1250,
     borderRadius: theme.sizes.radius*1.5,
     backgroundColor:theme.colors.white,
     width: width-5,
@@ -149,8 +152,9 @@ const styles = StyleSheet.create({
 
     // styling for table and its content
     tableContainer: 
-    { flex: 1, 
-      padding: 5,
+    {  
+      flex: 1, 
+       padding: 5,
        paddingTop:15, 
        backgroundColor: theme.colors.white,
        borderRadius:theme.sizes.radius
@@ -247,7 +251,7 @@ _renderItem ({item, index}, parallaxProps) {
                <View style={[styles.contentHeight]}>
                   <View style={styles.content}>
                      <Text style={styles.title}>About </Text> 
-                     <Text style={styles.description}><Text style={{fontSize:20,fontWeight:'bold',color:'black'}}>Angkor (ប្រាសាទអង្គរ) </Text>{'was the capital of the Khmer empire between the begin of the 10th and the middle of the 15th century. It is a UNESCO world heritage and streches over some 400km2 including forested area and magnificent remains of the different capitals of the Khmer Empire. They include the famous Temple of Angkor Wat and,at Angkor Thom, the Bayon Temple with its countless sculptural decorations'}</Text>  
+                     <Text style={styles.description}><Text style={{fontSize:20,fontWeight:'bold',color:'black'}}>Angkor (ប្រាសាទអង្គរ) </Text>{'was the capital of the Khmer empire between the begin of the 10th and the middle of the 15th century. It is a UNESCO world heritage and streches over some 400km2 including forested area and magnificent remains of the different capitals of the Khmer Empire. They include the famous Temple of Angkor Wat and,at Angkor Thom, the Bayon Temple with its countless sculptural decorations'} </Text>  
                   </View>
                   <View style={styles.content}>
                      <Text style={styles.title}>Information   

@@ -3,7 +3,7 @@ import {StyleSheet,View,TouchableOpacity,FlatList} from 'react-native';
 import { Searchbar,Card } from 'react-native-paper';
 import SplashScreen from 'react-native-splash-screen'
 import * as theme from '../utils/theme';
-import LinearGradient from 'react-native-linear-gradient';
+
 
 
 
@@ -82,7 +82,7 @@ this.sightholder = this.sights;
 //search filter function
 searchFilterFunction = text => {    
     const newSight = this.sightholder.filter(item => {      
-      const itemData = `${item.id} ${item.title}   ${item.preview} ${item.subtitle}`;
+      const itemData = `${item.id} ${item.title} ${item.preview} ${item.subtitle}`;
        const textData = text;
         
        return itemData.indexOf(textData) > -1;    
@@ -97,15 +97,12 @@ searchFilterFunction = text => {
    
     return (
         <View style ={{flex:1}}>
-            <LinearGradient colors={['rgb(106, 69, 74)', 'rgb(181, 163, 165)','#ffffff00']}  
-            start={{ x: 0, y: 0 }}
-            end={{ x: 0, y: 1 }}>
+        
             <Searchbar 
             style = {[styles.searchContainer]}
             placeholder="Search for sights"
             onChangeText={firstQuery => this.searchFilterFunction(firstQuery) }
             />
-             </LinearGradient>
 
         <FlatList 
         data={this.state.aSight}    

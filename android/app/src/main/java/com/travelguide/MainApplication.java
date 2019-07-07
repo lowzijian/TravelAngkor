@@ -1,7 +1,7 @@
 package com.travelguide;
 
 import android.app.Application;
-
+import com.airbnb.android.react.maps.MapsPackage;
 import com.facebook.react.ReactApplication;
 import com.BV.LinearGradient.LinearGradientPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
@@ -30,10 +30,10 @@ public class MainApplication extends Application implements ReactApplication {
             new LinearGradientPackage(),
             new SplashScreenReactPackage(),
             new VectorIconsPackage(),
-            new RNGestureHandlerPackage()
+            new RNGestureHandlerPackage(),
+            new MapsPackage()
       );
     }
-
 
     @Override
     protected String getJSMainModuleName() {
