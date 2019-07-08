@@ -205,7 +205,7 @@ _renderItem ({item, index}, parallaxProps) {
       return (
         
           <HeaderImageScrollView
-            showsVerticalScrollIndicator={true}
+            showsVerticalScrollIndicator={false}
             maxHeight={MAX_HEIGHT}
             minHeight={MIN_HEIGHT}
             maxOverlayOpacity={0.6}

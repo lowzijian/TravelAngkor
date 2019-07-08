@@ -142,6 +142,24 @@ const styles = StyleSheet.create({
       alignItems: 'center', 
       padding:15 
     },
+
+    //container title and subtitle
+    containerTitle:{
+      textShadowColor: 'rgba(0, 0, 0, 0.75)',
+      textShadowOffset: {width: -1, height: 1},
+      textShadowRadius: 10,
+      fontSize:12,
+      color:theme.colors.white,
+      fontSize:24,
+      fontWeight:'bold'
+    },
+    containerSubtitle:{
+      textShadowColor: 'rgba(0, 0, 0, 0.75)',
+      textShadowOffset: {width: -1, height: 1},
+      textShadowRadius: 10,
+      fontSize:12,
+      color:theme.colors.white
+    },
  
 });
 
@@ -284,8 +302,8 @@ renderHeader(){
               imageStyle={{ borderRadius: theme.sizes.radius }}
               source={require('../Assets/Image/Angkor.jpg')}>
                 <View>
-                    <Text style={{fontSize:24,fontWeight:'bold',color:'white'}}>Welcome to Angkor </Text>
-                    <Text style={{fontSize:12,color:'white'}}>Awe Inspiring Temples</Text>
+                    <Text style={styles.containerTitle}>Welcome to Angkor </Text>
+                    <Text style={styles.containerSubtitle}>Awe Inspiring Temples</Text>
                 </View> 
               </ImageBackground>
             </TouchableOpacity>
@@ -343,7 +361,6 @@ renderHeader(){
     )
   }
 
-
  // render the content of angkor's map
  renderMap() {
   return ( 
@@ -355,8 +372,8 @@ renderHeader(){
       imageStyle={{ borderRadius: theme.sizes.radius }}
       source={require('../Assets/Image/MapPreview.jpg')}>
         <View>
-            <Text style={{fontSize:24,fontWeight:'bold',color:'white'}}>Map of Angkor </Text>
-            <Text style={{fontSize:12,color:'white'}}>Walking through the largest architectural masterpiece</Text>
+            <Text style={styles.containerTitle}>Map of Angkor </Text>
+            <Text style={styles.containerSubtitle}>Walking through the largest architectural masterpiece</Text>
         </View> 
 
       </ImageBackground>

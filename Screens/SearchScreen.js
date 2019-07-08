@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import {StyleSheet,View,TouchableOpacity,FlatList} from 'react-native';
 import { Searchbar,Card } from 'react-native-paper';
-import SplashScreen from 'react-native-splash-screen'
 import * as theme from '../utils/theme';
-
-
-
 
 
 //stylesheet
@@ -30,16 +26,7 @@ const styles = StyleSheet.create({
 
 export default class SearchScreen extends Component {
 
-SearchbarRef = ref => this.view = ref;
-slideitDown = () =>this.view.slideitDown
 
-componentDidMount(){
-//hide the splash screen
- this._interval = setInterval(() => {
-SplashScreen.hide();
-}, 1000);
-    
-}
 constructor(props) {
     super(props);
 
