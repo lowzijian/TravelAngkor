@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet,View,TouchableOpacity,FlatList} from 'react-native';
+import {StyleSheet,View,TouchableOpacity,FlatList,Alert} from 'react-native';
 import { Searchbar,Card } from 'react-native-paper';
 import * as theme from '../utils/theme';
 
@@ -58,6 +58,7 @@ this.sights= [
 ]
 
 this.state = {
+    ísFocus:false,
     firstQuery:"",
     aSight:this.sights,
  
@@ -86,9 +87,11 @@ searchFilterFunction = text => {
         <View style ={{flex:1}}>
         
             <Searchbar 
-            style = {[styles.searchContainer]}
+            style = {{ margin: (this.state.isFocus)?theme.sizes.margin-30:theme.sizes.margin-15,}}
             placeholder="Search for sights"
-            onChangeText={firstQuery => this.searchFilterFunction(firstQuery) }
+            onChangeText={firstQuery => this.searchFilterFunction(firstQuery)}
+            onFocus = {() => this.setState({'isFocus': true})}
+            onEndEditing = {() => this.setState({'isFocus': false})}
             />
 
         <FlatList 
@@ -97,13 +100,13 @@ searchFilterFunction = text => {
         renderItem={({ item }) => ( 
          <TouchableOpacity  activeOpacity={0.8}> 
             <Card style ={styles.cardContainer} elevation={2}>
-            <Card.Cover style = {styles.imageContainer} source ={`${item.preview}`}/>
-            <Card.Title title={`${item.title} `} subtitle= {`${item.subtitle} `}/>
+            <Card.Cover style = {styles.imageContainer} source ={item.preview}/>
+            <Card.Title title={item.title} subtitle= {item.subtitle}/>
             </Card>
         </TouchableOpacity>
 
         )}          
-            keyExtractor={item => item.id}  
+            keyExtractor={item => String(item.id)}  
             ItemSeparatorComponent={this.renderSeparator} 
             ListHeaderComponent={this.renderHeader} 
                           

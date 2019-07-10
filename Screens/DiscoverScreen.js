@@ -6,6 +6,7 @@ import { Header } from 'react-navigation';
 import * as Animatable from 'react-native-animatable';
 import * as theme from '../utils/theme';
 import LinearGradient from 'react-native-linear-gradient';
+import { isObjectTypeIndexer } from '@babel/types';
 
 
 const { width, height } = Dimensions.get('window');
@@ -65,7 +66,8 @@ const styles = StyleSheet.create({
   header:{
     fontSize:13,
     fontWeight:'300',
-    paddingBottom:15
+    paddingBottom:15,
+    textAlign: 'justify'  
   },
 
   infoContainer:{
@@ -228,7 +230,7 @@ export default class DiscoverScreen extends Component {
     else if(discoverArticle.id == 3){
       screen = sightsScreen
     }
-    else
+    else if(discoverArticle.id == 4)
     {
       screen = beforyougoScreen
     }
@@ -359,8 +361,7 @@ export default class DiscoverScreen extends Component {
   }
 
   renderBefore(list){
-    
- 
+    if(list.details != null){
     return(
       <View style={styles.content}>
         <View>
@@ -369,13 +370,22 @@ export default class DiscoverScreen extends Component {
         </View>
         <View style = {styles.infoContainer}>
         { 
-          // list.details.map((item, index) => {
-          // return <Text style={styles.header}>{item}</Text>
-           //})
+
+           list.details.map((item, index) => {
+           return ( 
+           <View key={index} style= {[styles.row]}> 
+             <Text style={[styles.header, {justifyContent: 'flex-start',paddingRight:10}]}>{index + 1}.</Text>
+             <Text style={[styles.header, {justifyContent: 'flex-end'}]}>{item}</Text>
+           </View>
+           )
+           })
+          
         }
         </View>
       </View>
+    
     );
+      }
   }
 }
 
