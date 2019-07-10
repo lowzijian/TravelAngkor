@@ -50,6 +50,15 @@ const styles = StyleSheet.create({
   content:{
     marginHorizontal:theme.sizes.margin,
     backgroundColor: 'transparent',
+    justifyContent: 'space-evenly'
+
+  },
+
+  caption:{
+  fontSize:10,
+  padding:5,
+  color:theme.colors.caption,
+  alignSelf:'center'
 
   },
 
@@ -57,7 +66,8 @@ const styles = StyleSheet.create({
     fontSize:13,
     paddingVertical:5,
     textAlign: 'justify',
-    lineHeight:28
+    lineHeight:28,
+
   },
 
   circuitContainer: {
@@ -78,6 +88,7 @@ const styles = StyleSheet.create({
     fontSize:24,
     fontWeight:'bold'
   },
+
   containerSubtitle:{
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: {width: -1, height: 1},
@@ -95,6 +106,14 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 10,
     elevation: 5,
+  },
+
+  imageContainer:{
+    width: width - (theme.sizes.padding * 2),
+    height: width * 0.6,
+    borderRadius: 5,
+    marginVertical:5,
+    resizeMode: 'cover',
   },
 
     // styling for the scroll view content
@@ -181,7 +200,9 @@ export default class DiscoverScreen extends Component {
     const { navigation } = this.props;
     const discoverArticle = navigation.getParam('discoverItem');
     const historyScreen = this.renderHistory(this.data);
-    const sightsScreen = this.renderSights();
+    const sightsScreen = this.renderSights(discoverArticle);
+    const cultureScreen = this.renderCulture(discoverArticle);
+
 
     let screen;
 
@@ -190,6 +211,13 @@ export default class DiscoverScreen extends Component {
     }
      else if(discoverArticle.id == 2){
       screen = historyScreen
+    }
+    else if(discoverArticle.id == 1){
+      screen = cultureScreen
+    }
+    else
+    {
+
     }
 
 
@@ -223,7 +251,7 @@ export default class DiscoverScreen extends Component {
               onDisplay={() => this.navTitleView.fadeOut(100)}>
               </TriggeringView>
 
-               <View style={[styles.contentHeight]}>
+               <View style={[styles.contentHeight,{height:discoverArticle.contentHeight}]}>
                {screen}
                </View>
       </LinearGradient>
@@ -236,30 +264,29 @@ export default class DiscoverScreen extends Component {
     return(
       <View>
          <View style={styles.content}>
-          <Text style={styles.title}>About</Text>
+          <Text style={styles.title}>About </Text>
         </View>
         <View style={styles.container}>
-          <FlatList>
           <Timeline 
             innerCircle={'dot'}
             timeContainerStyle={{minWidth:52, marginTop: 0}}
-            data= {this.data}
+            data= {data}
             separator={false}
             timeStyle={{color:'black', fontWeight:'bold'}}
             detailContainerStyle={{marginBottom: 20, paddingLeft: 5, paddingRight: 5, backgroundColor: "#F0F8FF", borderRadius: 10}}
             titleStyle={{color:'gray'}}
-          /></FlatList>
+          /> 
         </View>
       </View>
     );
   }
 
-  renderSights(){
+  renderSights(sights){
     return(
       <View style={styles.content}>
         <View>
           <Text style={styles.title}>About</Text>
-          <Text style={styles.description}>There are two round tours in Angkor , each of them usually a full-day excursion. They are called  "Small Circuit" and "Grand Circuit". Most Angkor monuments of touristic interest are located along one of these circuits .</Text>
+          <Text style={styles.description}>{sights.description}</Text>
         </View>
         <View>
         <Text style={styles.title}>Explore Now</Text>
@@ -288,6 +315,32 @@ export default class DiscoverScreen extends Component {
               </ImageBackground>
             </TouchableOpacity>
       </View>
+      </View>
+    );
+  }
+
+  renderCulture(culture){
+    return(
+      <View style={styles.content}>
+        <View>
+          <Text style={styles.title}>About</Text>
+          <Text style={styles.description}>{culture.description1}</Text>
+        </View>
+        <View>
+          <Image style={[styles.imageContainer]}  source = {require('../Assets/Image/Culture1.jpg')}/>
+           <View>
+             <Text style={[styles.caption]}>Traditional Dance in Cambodia </Text>
+           </View>
+        </View>
+        <View>
+          <Text style={styles.description}>{culture.description2}</Text>
+        </View>
+        <View>
+          <Image style={[styles.imageContainer]}  source = {require('../Assets/Image/Culture2.jpg')}/>
+           <View>
+             <Text style={[styles.caption]}>Buddhist Monk in Cambodia </Text>
+           </View>
+        </View>
       </View>
     );
   }
