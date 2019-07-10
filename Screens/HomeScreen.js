@@ -198,7 +198,20 @@ const category = [
     title: 'Before you go',
     preview:require('../Assets/Image/BeforeYouGoPreview.jpg'),
     caption:'the ultimate guide list before you go',
-    description:''
+    description:'Angkor is  rich in culture, customs and religion. Here are a few tips you should know before packing that will help enhance your trip to the Kingdom of Wonder.',
+    details:[
+      'Start early, and pack for multiple days of adventure.',
+      'Do not throw away your ticket. Multi-day tickets will be checked each time you re-enter the property. Replacing it means waiting in line and probably paying again.',
+      'Hire a local tuk-tuk driver instead of a tour operator as drivers know the areas better and can make recommendations on the best time to visit specific temples. ',
+      'Skip sunrise at the main temple as it is crowded. Drivers may know some secret places that are less people. So, you can enjoy your memorable sunrise experience.  ',
+      'Bringing food and water is a good idea.',
+      'Be ready to walk. A lot.',
+      'Bring a guidebook, even if traveling with a guide.',
+      'Revealing clothes must not be worn - bare shoulders and knees will be viewed as disrespectful. The Royal Palace in Phnom Penh for instance will rent unsuitably attired visitors a flattering pair of "one size fits nobody" long trousers for $2.',
+      'Do not fall into the trap of buying from or giving to the kids',
+      'Do not touch a Buddhist monk’s head', 
+    ],
+    contentHeight:800
   },
 ]
 
@@ -393,7 +406,7 @@ renderHeader(){
 renderFooter(){
   return(
     <View style={styles.footer}>
-      <Text style={{color:theme.colors.white,fontSize:10}}>TravelAngkor &#174; Version 1.6</Text> 
+      <Text style={{color:theme.colors.white,fontSize:10}}>TravelAngkor &#174; Version 1.7</Text> 
     </View>
   )
 }

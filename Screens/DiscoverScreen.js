@@ -62,6 +62,19 @@ const styles = StyleSheet.create({
 
   },
 
+  header:{
+    fontSize:13,
+    fontWeight:'300',
+    paddingBottom:15
+  },
+
+  infoContainer:{
+    borderRadius:theme.sizes.radius,
+    backgroundColor: 'rgb(242, 246, 248)',
+    marginBottom:10,
+    padding:15
+  },
+
   description:{
     fontSize:13,
     paddingVertical:5,
@@ -125,7 +138,6 @@ const styles = StyleSheet.create({
     },
 
     contentHeight:{
-    height:800,
     borderRadius: theme.sizes.radius*1.5,
     backgroundColor:theme.colors.white,
     width: width-5,
@@ -202,22 +214,23 @@ export default class DiscoverScreen extends Component {
     const historyScreen = this.renderHistory(this.data);
     const sightsScreen = this.renderSights(discoverArticle);
     const cultureScreen = this.renderCulture(discoverArticle);
+    const beforyougoScreen = this.renderBefore(discoverArticle);
 
 
     let screen;
 
-    if( discoverArticle.id == 3){
-      screen = sightsScreen
+    if( discoverArticle.id == 1){
+      screen = cultureScreen
     }
      else if(discoverArticle.id == 2){
       screen = historyScreen
     }
-    else if(discoverArticle.id == 1){
-      screen = cultureScreen
+    else if(discoverArticle.id == 3){
+      screen = sightsScreen
     }
     else
     {
-
+      screen = beforyougoScreen
     }
 
 
@@ -338,8 +351,28 @@ export default class DiscoverScreen extends Component {
         <View>
           <Image style={[styles.imageContainer]}  source = {require('../Assets/Image/Culture2.jpg')}/>
            <View>
-             <Text style={[styles.caption]}>Buddhist Monk in Cambodia </Text>
+             <Text style={[styles.caption]}>Buddhist monks in Cambodia </Text>
            </View>
+        </View>
+      </View>
+    );
+  }
+
+  renderBefore(list){
+    
+ 
+    return(
+      <View style={styles.content}>
+        <View>
+          <Text style={styles.title}>About</Text>
+          <Text style={styles.description}>{list.description}</Text>
+        </View>
+        <View style = {styles.infoContainer}>
+        { 
+          // list.details.map((item, index) => {
+          // return <Text style={styles.header}>{item}</Text>
+           //})
+        }
         </View>
       </View>
     );
