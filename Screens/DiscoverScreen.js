@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View, Dimensions, Image, ImageBackground ,TouchableOpacity,FlatList} from 'react-native'
+import { Text, StyleSheet, View, Dimensions, Image, ImageBackground ,TouchableOpacity} from 'react-native'
 import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view';
 import Timeline from 'react-native-timeline-listview';
 import { Header } from 'react-navigation';
 import * as Animatable from 'react-native-animatable';
 import * as theme from '../utils/theme';
 import LinearGradient from 'react-native-linear-gradient';
-import { isObjectTypeIndexer } from '@babel/types';
+
 
 
 const { width, height } = Dimensions.get('window');
