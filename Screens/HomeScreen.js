@@ -175,7 +175,6 @@ const category = [
     caption:'resides in the heart of people',
     description1:' The culture of Cambodia has been heavily influenced by the religions of the people living in the country. The culture has developed from the amalgamation of the Hindu, Buddhist, and indigenous cultures that are prevalent in the region.The Khmer people are modest, and tend to dress conservatively avoiding revealing clothes.',
     description2:'Buddhism has existed in Cambodia since at least the 5th century CE Theravada Buddhism has been the Cambodian state religion since the 13th century CE (excepting the Khmer Rouge period), and is currently estimated to be the faith of 90% of the population. Buddhist nun and monks can be found at Angkor Wat, Siem Reap, Cambodia. It is the official religion in all of Cambodia.',
-    contentHeight:1020
   },
   {
     id: 2,
@@ -183,7 +182,6 @@ const category = [
     preview: require('../Assets/Image/HistoryPreview.jpg'),
     caption:'intro to Khmer civilisation',
     description:'',
-    contentHeight:950
   },
   {
     id: 3,
@@ -191,7 +189,6 @@ const category = [
     preview: require('../Assets/Image/SightPreview.jpg'),
     caption:'venture to this magic kingdom',
     description:'There are two round tours in Angkor , each of them usually a full-day excursion. They are called  "Small Circuit" and "Grand Circuit". Most Angkor monuments of touristic interest are located along one of these circuits .',
-    contentHeight:800
   },
   {
     id: 4,
@@ -211,7 +208,6 @@ const category = [
       'Do not fall into the trap of buying from or giving to the kids',
       'Do not touch a Buddhist monk’s head', 
     ],
-    contentHeight:800
   },
 ]
 
