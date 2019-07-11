@@ -61,7 +61,12 @@ this.sights= [
 this.state = {
     ísFocus:false,
     firstQuery:"",
-    aSight:this.sights,
+    aSight:this.sights.sort(function(a, b){
+      if(a.title < b.title) { return -1; }
+      if(a.title > b.title) { return 1; }
+      return 0;
+      //sort alphabetically
+  }),
  
 
 };
@@ -103,6 +108,7 @@ searchFilterFunction = text => {
         data={this.state.aSight}    
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => ( 
+         
          <TouchableOpacity  activeOpacity={0.8} onPress={() => this.props.navigation.navigate(('Sight'), { sight: item })}> 
             <Card style ={styles.cardContainer} elevation={2}>
             <Card.Cover style = {styles.imageContainer} source ={item.preview}/>
