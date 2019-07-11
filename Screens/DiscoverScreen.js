@@ -266,7 +266,7 @@ export default class DiscoverScreen extends Component {
               onDisplay={() => this.navTitleView.fadeOut(100)}>
               </TriggeringView>
 
-               <View style={[styles.contentHeight,{height:discoverArticle.contentHeight}]}>
+               <View style={styles.contentHeight}>
                {screen}
                </View>
       </LinearGradient>
