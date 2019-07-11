@@ -28,13 +28,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
 
-  navigationHeader:{
-        paddingHorizontal: theme.sizes.padding,
-        paddingTop: theme.sizes.padding,
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        position: 'absolute',
-  },
 
   title:{
     fontSize:28,
@@ -94,26 +87,12 @@ backgroundImage: {
 
 export default class DiscoverScreen extends Component {
 
-    static navigationOptions = ({ navigation }) => {
-        return {
-          header: (
-            <View style={[styles.flex, styles.row, styles.navigationHeader]}>     
-                <TouchableOpacity  style = {{ width: 100, height: 100, }}onPress={ () => { navigation.goBack() }} >
-                <FontAwesome name="chevron-left" color={theme.colors.white} size={theme.sizes.font * 1.5} />
-                </TouchableOpacity>
-            </View>
-          ),
-          headerTransparent: true,
-        }
-      }
-  
 
   render() {
     const { navigation } = this.props;
     const sight = navigation.getParam('sight');
 
     return (
-
     <HeaderImageScrollView
       showsVerticalScrollIndicator={false}
       maxHeight={MAX_HEIGHT}
