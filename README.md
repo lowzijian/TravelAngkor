@@ -18,7 +18,7 @@ react-native run-android
 ```
 
 # If you see the error below...
-![Error1 Image](/web/images/error1.png)
+![Error1 Image](/web/images/error1.PNG)
 
 ## Close the application and run these commands:
 ```
