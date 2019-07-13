@@ -1,4 +1,4 @@
-![App Logo](/web/images/logo.png)
+![App Logo](/web/images/app_logo.png)
 
 # Installation Guides:
 
