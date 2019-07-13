@@ -104,13 +104,15 @@ export default class DiscoverScreen extends Component {
         </View>
         <View style={theme.styling.timelineContainer}>
           <Timeline 
+            circleColor='rgb(69, 23, 29)'
+            lineColor='rgb(106, 69, 74)'
             innerCircle={'dot'}
             timeContainerStyle={{minWidth:52, marginTop: 0}}
             data= {data}
             separator={false}
             timeStyle={{color:'black', fontWeight:'bold'}}
-            detailContainerStyle={{marginBottom: 20, paddingLeft: 5, paddingRight: 5, backgroundColor: "#F0F8FF", borderRadius: 10}}
-            titleStyle={{color:'gray'}}
+            detailContainerStyle={theme.styling.timelineDetailContainer}
+            titleStyle={theme.styling.h2}
           /> 
         </View>
       </View>
