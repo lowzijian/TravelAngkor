@@ -59,7 +59,7 @@ this.sights= [
 ]
 
 this.state = {
-    ísFocus:false,
+    isFocus:false,
     firstQuery:"",
     aSight:this.sights.sort(function(a, b){
       if(a.title < b.title) { return -1; }
@@ -87,22 +87,24 @@ searchFilterFunction = text => {
   };
   //(this.state.isFocus)?bounceInDown:bounceInUp>
 
+
   render() {
     const { firstQuery } = this.state;
    
     return (
         <View style ={{flex:1}}>
 
-        <Animatable.View animation= "pulse" duration={2000} iterationCount={2} >
+         <Animatable.View animation= {this.state.isFocus ? "rubberBand":""}>
           <Searchbar 
             style = {styles.searchContainer}
             placeholder="Search for sights"
             onChangeText={firstQuery => this.searchFilterFunction(firstQuery)}
-            onFocus = {() => this.setState({'isFocus': true})}
+        
+            onFocus = {() => this.setState({ 'isFocus': true})}
             onEndEditing = {() => this.setState({'isFocus': false})}
             > </Searchbar>
+            </Animatable.View>
 
-        </Animatable.View>
 
         <FlatList 
         data={this.state.aSight}    

@@ -18,37 +18,24 @@ import SightScreen from './Screens/SightScreen';
 import { fromRight } from 'react-navigation-transitions';
 
 
+
 const AppNavigator =  createStackNavigator({
-  Home: {
-    screen: HomeScreen,
-  },
+  Home: {screen: HomeScreen},
 
-  Map:{
-    screen:MapScreen,
-  },
+  Map:{ screen:MapScreen,},
 
-  Discover:{
-    screen: DiscoverScreen,
-  },
+  Discover:{ screen: DiscoverScreen,},
 
-  Welcome:{
-    screen: WelcomeScreen,
-  },
+  Welcome:{ screen: WelcomeScreen, },
 
-  Search:{
-    screen: SearchScreen,    
-  },
+  Search:{ screen: SearchScreen,    },
 
-  Sight:{
-    screen: SightScreen,    
-  }
+  Sight:{screen: SightScreen, }
 
 }, {
-  initialRouteName: 'Home',
   transitionConfig: () => fromRight(600),
-  defaultNavigationOptions:{
-    header:null
-  }
+  initialRouteName: 'Home',
+  defaultNavigationOptions:{header:null}
 });   
 
 export default createAppContainer(AppNavigator);
