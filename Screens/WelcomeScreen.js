@@ -114,7 +114,6 @@ const styles = StyleSheet.create({
     },
 
     contentHeight:{
-    height:1250,
     borderRadius: theme.sizes.radius*1.5,
     backgroundColor:theme.colors.white,
     width: width-5,
@@ -277,11 +276,11 @@ _renderItem ({item, index}, parallaxProps) {
 
                   </View>
 
-                    <View style={styles.content}>
+                    <View style={[styles.content,{marginBottom:15}]}>
                         <Text style={styles.title}>Sights </Text> 
                         <View  style={{alignContent:'center',alignItems:'center'}}>
                           <Carousel
-                          layout={'stack'} layoutCardOffset={8} 
+                          layout={'tinder'} layoutCardOffset={8} 
                           ref={(c) => { this._carousel = c; }}
                           data={this.state.sight}
                           renderItem={this._renderItem}
