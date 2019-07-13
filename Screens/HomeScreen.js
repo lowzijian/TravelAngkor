@@ -153,8 +153,8 @@ renderHeader(){
  // render the content of basic information of Angkor Wat
   renderDestination() {
     return ( 
-      <View>
-        <Text style={{fontSize: theme.sizes.font*1.5 , fontWeight:'bold', marginHorizontal: theme.sizes.margin, padding:5, marginVertical:5}}>Discover Now</Text>
+      <View style={theme.styling.contentContainer}>
+        <Text style={theme.styling.title1}>Discover Now</Text>
             <TouchableOpacity activeOpacity={0.8} onPress={() => this.props.navigation.navigate('Welcome')}>
               <ImageBackground   
               style={[theme.styling.flex, theme.styling.DefaultContainer, theme.styling.shadow]}
@@ -223,7 +223,7 @@ renderHeader(){
  // render the content of angkor's map
  renderMap() {
   return ( 
-  <View>
+  <View style= {theme.styling.contentContainer}>
     <Text style={theme.styling.title1}>Be your own Guide</Text>
      <TouchableOpacity activeOpacity={0.8} onPress={() => this.props.navigation.navigate('Map')}>
       <ImageBackground   
@@ -248,7 +248,7 @@ renderHeader(){
 renderFooter(){
   return(
     <View style={theme.styling.footer}>
-      <Text style={{color:theme.colors.white,fontSize:10}}>TravelAngkor &#174; Version 1.8</Text> 
+      <Text style={{color:theme.colors.white,fontSize:10}}>TravelAngkor &#174; Version 1.9</Text> 
     </View>
   )
 }

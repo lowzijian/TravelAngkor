@@ -1,25 +1,11 @@
 import React, { Component } from 'react';
-import {StyleSheet,View,TouchableOpacity,FlatList} from 'react-native';
+import {View,TouchableOpacity,FlatList} from 'react-native';
 import { Searchbar,Card } from 'react-native-paper';
 import * as theme from '../utils/theme';
 import * as Animatable from 'react-native-animatable';
 
 
 
-//stylesheet
-const styles = StyleSheet.create({
-    searchContainer:{
-       margin:theme.sizes.margin-15,
-    },
-    cardContainer:{
-        margin:theme.sizes.margin-10,
-        borderRadius:theme.sizes.radius,
-    },
-    imageContainer:{
-        height:115,
-        resizeMode: 'contain',
-    }
-})
 
 export default class SearchScreen extends Component {
 
@@ -85,7 +71,7 @@ searchFilterFunction = text => {
     
     this.setState({ aSight: newSight });  
   };
-  //(this.state.isFocus)?bounceInDown:bounceInUp>
+
 
 
   render() {
@@ -94,16 +80,14 @@ searchFilterFunction = text => {
     return (
         <View style ={{flex:1}}>
 
-        <Animatable.View animation= "tada" delay={100}>
-         <Animatable.View animation= {this.state.isFocus ? "rubberBand":""}>
+        <Animatable.View animation= {this.state.isFocus ? "rubberBand":""}>
           <Searchbar 
-            style = {styles.searchContainer}
+            style = {theme.styling.searchbarContainer}
             placeholder="Search for sights"
             onChangeText={firstQuery => this.searchFilterFunction(firstQuery)}
             onFocus = {() => this.setState({ 'isFocus': true})}
             onEndEditing = {() => this.setState({'isFocus': false})}
             > </Searchbar>
-            </Animatable.View>
         </Animatable.View>
 
         <FlatList 
@@ -112,8 +96,8 @@ searchFilterFunction = text => {
         renderItem={({ item }) => ( 
          
          <TouchableOpacity  activeOpacity={0.8} onPress={() => this.props.navigation.navigate(('Sight'), { sight: item })}> 
-            <Card style ={styles.cardContainer} elevation={2}>
-            <Card.Cover style = {styles.imageContainer} source ={item.preview}/>
+            <Card style ={theme.styling.sightCardContainer} elevation={2}>
+            <Card.Cover style = {theme.styling.sightImageCardContainer} source ={item.preview}/>
             <Card.Title title={item.title} subtitle= {item.subtitle}/>
             </Card>
         </TouchableOpacity>

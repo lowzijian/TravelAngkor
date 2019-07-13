@@ -5,7 +5,9 @@ import { Header } from 'react-navigation';
 const MIN_HEIGHT =Header.HEIGHT+50;
 const MAX_HEIGHT =350;
 
-const { width, height } = Dimensions.get('window');
+
+
+const { width , height } = Dimensions.get('window');
 const colors = {
     black: '#000',
     white: '#FFF',
@@ -37,6 +39,16 @@ const colors = {
   },
   center:{
     alignItems: 'center',
+  },
+
+
+  //Carousel item
+  carouselItem1:{
+    width:width - 60,
+    height: (width - (sizes.padding *4)),
+    justifyContent: 'center',
+    alignItems: 'center',
+    opacity:0.85
   },
 
   // Header styling
@@ -77,7 +89,7 @@ const colors = {
   contentHeader: {
     backgroundColor: 'transparent',
     padding: 36,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 12,
     marginTop: 0,
@@ -90,12 +102,40 @@ const colors = {
     textAlign: 'justify'  
   },
 
+  h2:{
+    fontSize:15,
+    fontWeight:'500',
+  },
+
+  superscript:{
+    fontSize:16,
+    fontWeight:'bold',
+    color:colors.black
+  },
+
+  imageName:{
+    fontSize:25,
+    fontWeight:'500',
+    padding:15,
+    color:colors.white,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)', 
+    textShadowOffset: {width: -1, height: 1}, 
+    textShadowRadius: 10,
+    margin:sizes.margin
+
+  },
+
   description:{
     fontSize:13,
     paddingVertical:5,
     textAlign: 'justify',
     lineHeight:28,
 
+  },
+
+  caption:{
+    fontSize:12,
+    color:colors.caption,
   },
 
 
@@ -106,7 +146,6 @@ const colors = {
 
   },
 
-  
   displayContainer:{
     width: width - (sizes.padding * 2),
     height: width * 0.6,
@@ -115,7 +154,7 @@ const colors = {
     resizeMode: 'cover',
   },
 
-  caption:{
+  imageCaption:{
     fontSize:10,
     padding:5,
     color:colors.caption,
@@ -125,7 +164,7 @@ const colors = {
 
   //divider
   divider:{
-    borderLeftColor: 'white',
+    borderLeftColor: colors.white,
     borderLeftWidth: 3,
     borderRadius:15,
     margin:2
@@ -190,6 +229,14 @@ const colors = {
 	  backgroundColor:colors.white
   },
 
+  //feesContainer
+  feesContainer:{
+    borderRadius:sizes.radius,
+    backgroundColor: colors.white,
+    marginVertical:4,
+    padding:15
+  },
+
 
   //weather Container 
     weatherContainer: {
@@ -212,26 +259,33 @@ const colors = {
       marginHorizontal: 2,  
     },
   
-    // All container in home screen
+    // container 
     DefaultContainer: {
       width: width - (sizes.padding * 2),
       height: width * 0.6,
-      marginHorizontal: sizes.margin,
       padding:24,
       borderRadius: sizes.radius,
       backgroundColor:'rgb(242, 246, 248)',
       marginVertical:18
     },
 
-    // All container in home screen
-    SightsContainer: {
-      width: width - (sizes.padding * 2),
-      height: width * 0.6,
-      padding:24,
-      borderRadius: sizes.radius,
-      backgroundColor:'rgb(242, 246, 248)',
-      marginVertical:18
+  
+
+
+    //Search screen containers
+    searchbarContainer:{
+        margin:sizes.margin-15,
     },
+
+   sightCardContainer:{
+        margin:sizes.margin-10,
+        borderRadius:sizes.radius,
+    },
+
+   sightImageCardContainer:{
+       height:115,
+       resizeMode: 'contain',
+   },
     
 
     //footer
@@ -320,7 +374,6 @@ const colors = {
         
     },
 
-
   })
   
   export {
@@ -328,5 +381,8 @@ const colors = {
     colors,
     sizes,
     MAX_HEIGHT,
-    MIN_HEIGHT
+    MIN_HEIGHT,
+    width,
+    height,
+    
   };

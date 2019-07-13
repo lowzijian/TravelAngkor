@@ -128,7 +128,7 @@ export default class DiscoverScreen extends Component {
         <Text style={theme.styling.title2}>Explore Now</Text>
           <TouchableOpacity activeOpacity={0.8} onPress={() => this.props.navigation.navigate('Search')}>
               <ImageBackground   
-              style={[theme.styling.flex, theme.styling.SightsContainer, theme.styling.shadow]}
+              style={[theme.styling.flex, theme.styling.DefaultContainer, theme.styling.shadow]}
               imageStyle={{ borderRadius: theme.sizes.radius }}
               source={require('../Assets/Image/GrandCircuit.jpg')}>
                 <View>
@@ -141,7 +141,7 @@ export default class DiscoverScreen extends Component {
       <View>
           <TouchableOpacity activeOpacity={0.8} onPress={() => this.props.navigation.navigate('Search')}>
               <ImageBackground   
-              style={[theme.styling.flex, theme.styling.SightsContainer, theme.styling.shadow]}
+              style={[theme.styling.flex, theme.styling.DefaultContainer, theme.styling.shadow]}
               imageStyle={{ borderRadius: theme.sizes.radius }}
               source={require('../Assets/Image/SmallCircuit.jpg')}>
                 <View>
@@ -165,7 +165,7 @@ export default class DiscoverScreen extends Component {
         <View>
           <Image style={[theme.styling.displayContainer]}  source = {require('../Assets/Image/Culture1.jpg')}/>
            <View>
-             <Text style={[theme.styling.caption]}>Traditional Dance in Cambodia </Text>
+             <Text style={[theme.styling.imageCaption]}>Traditional Dance in Cambodia </Text>
            </View>
         </View>
         <View>
@@ -174,7 +174,7 @@ export default class DiscoverScreen extends Component {
         <View>
           <Image style={[theme.styling.displayContainer]}  source = {require('../Assets/Image/Culture2.jpg')}/>
            <View>
-             <Text style={[theme.styling.caption]}>Buddhist monks in Cambodia </Text>
+             <Text style={[theme.styling.imageCaption]}>Buddhist monks in Cambodia </Text>
            </View>
         </View>
       </View>
