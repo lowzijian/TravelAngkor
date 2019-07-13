@@ -14,11 +14,11 @@ import MapView from "react-native-maps";
 
 
 const Images = [
-  require('../Assets/Image/AngkorPreview.jpg'),
-  require('../Assets/Image/AngkorPreview.jpg'),
-  require('../Assets/Image/AngkorPreview.jpg'),
-  require('../Assets/Image/AngkorPreview.jpg'),
-  require('../Assets/Image/AngkorPreview.jpg'),
+  require('../Assets/Image/AngkorWatPreview.jpg'),
+  require('../Assets/Image/AngkorWatPreview.jpg'),
+  require('../Assets/Image/AngkorWatPreview.jpg'),
+  require('../Assets/Image/AngkorWatPreview.jpg'),
+  require('../Assets/Image/AngkorWatPreview.jpg'),
 ]
 
 const { width, height } = Dimensions.get("window");

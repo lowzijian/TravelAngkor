@@ -23,24 +23,17 @@ this.sights= [
       },
       {
         id: 2,
-        title: 'Beng Mealea',
-        subtitle:' The Indiana jones jungle temple',
-        description:'',
-        preview: require('../Assets/Image/BengMealeaPreview.jpg'),
-      },
-      {
-        id: 3,
         title: 'Ta Prohm',
         subtitle:'Tomb Raider Temple',
         description:'Ta Prohm is ubiquitously known as “the Tomb Raider temple.” A 12th-century Buddhist monastery and temple complex enmeshed in a web of towering tree roots, it’s one of Angkor’s—and Cambodia’s—signature sights and stands as an eerie symbol of the transience of human endeavor.',
         preview: require('../Assets/Image/TaProhmPreview.jpg'),
       },
       {
-        id: 4,
+        id: 3,
         title: 'Angkor Wat',
         subtitle:'City of temples',
         description:'Angkor Wat temple complex is a 12th-century engineering marvel that tops many adventure travelers’ bucket lists and justifies a trip to Southeast Asia all on its own. Every surface is covered in intricate carvings and details—nymphs dance on columns in shadowy hallways, serpent-topped balustrades line the moat, and huge, chiseled bas-reliefs wrap the outer walls, depicting Khmer Empire battles.',
-        preview: require('../Assets/Image/AngkorPreview.jpg'),
+        preview: require('../Assets/Image/AngkorWatPreview.jpg'),
       }   
 ]
 

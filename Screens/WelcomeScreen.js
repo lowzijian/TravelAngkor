@@ -16,18 +16,13 @@ const pinpointSight = [
   },
   {
     id: 2,
-    title: 'Beng Mealea',
-    preview: require('../Assets/Image/BengMealeaPreview.jpg'),
-  },
-  {
-    id: 3,
     title: 'Ta Prohm',
     preview: require('../Assets/Image/TaProhmPreview.jpg'),
   },
   {
-    id: 4,
+    id: 3,
     title: 'Angkor Wat',
-    preview: require('../Assets/Image/AngkorPreview.jpg'),
+    preview: require('../Assets/Image/AngkorWatPreview.jpg'),
   }
 ]
 
