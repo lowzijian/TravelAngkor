@@ -94,17 +94,17 @@ searchFilterFunction = text => {
     return (
         <View style ={{flex:1}}>
 
+        <Animatable.View animation= "tada" delay={100}>
          <Animatable.View animation= {this.state.isFocus ? "rubberBand":""}>
           <Searchbar 
             style = {styles.searchContainer}
             placeholder="Search for sights"
             onChangeText={firstQuery => this.searchFilterFunction(firstQuery)}
-        
             onFocus = {() => this.setState({ 'isFocus': true})}
             onEndEditing = {() => this.setState({'isFocus': false})}
             > </Searchbar>
             </Animatable.View>
-
+        </Animatable.View>
 
         <FlatList 
         data={this.state.aSight}    

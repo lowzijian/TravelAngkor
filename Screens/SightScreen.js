@@ -4,7 +4,7 @@ import HeaderImageScrollView from 'react-native-image-header-scroll-view';
 import { Header } from 'react-navigation';
 import * as theme from '../utils/theme';
 import LinearGradient from 'react-native-linear-gradient';
-import FontAwesome from'react-native-vector-icons/FontAwesome'
+
 
 
 
