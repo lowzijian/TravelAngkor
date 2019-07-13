@@ -216,10 +216,10 @@ const colors = {
   //information Container
   infoContainer:{
     borderRadius:sizes.radius,
-    backgroundColor: 'rgba(180, 162, 164,0.2)',
+    backgroundColor: 'rgb(242, 246, 248)',
     marginBottom:10,
     padding:15
-  },
+  },  
 
   //timeline Container
   timelineContainer: {
