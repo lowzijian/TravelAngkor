@@ -1,3 +1,5 @@
+![App Logo](/web/images/logo.png)
+
 # Installation Guides:
 
 Using Terminal (OSX/Linux) or Command Line (Windows)
