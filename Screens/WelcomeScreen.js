@@ -93,7 +93,7 @@ _renderItem ({item, index}, parallaxProps) {
 
                <View style={[theme.styling.contentHeight]}>
                   <View style={theme.styling.contentContainer}>
-                     <Text style={theme.styling.title2}>About </Text> 
+                     <Text style={theme.styling.title2}>About </Text>
                  <Text style={theme.styling.superscript}>Angkor (ប្រាសាទអង្គរ) </Text>    
                 <Text style={theme.styling.description}>was the capital of the Khmer empire between the begin of the 10th and the middle of the 15th century. It is a UNESCO world heritage and streches over some 400km&#178; , including forested area and magnificent remains of the different capitals of the Khmer Empire. They include the famous Temple of Angkor Wat and,at Angkor Thom, the Bayon Temple with its countless sculptural decorations</Text>  
                   </View>

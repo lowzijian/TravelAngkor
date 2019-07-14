@@ -70,7 +70,6 @@ export default class HomeScreen extends Component {
         temperature: 'disconnect',
         weatherCondition:'',
         icon:"cloud-question",
-
     };
   }
 
@@ -187,7 +186,7 @@ renderHeader(){
             snapToAlignment="center"
             style={[ theme.styling.shadow, { overflow: 'visible' }]}
             data={this.props.contents}
-            keyExtractor={(item,index) => `${item.id}`}
+            keyExtractor={(item, index) => `${item.id}`}
             renderItem={({ item, index }) => this.renderDiscoverItems(item, index)}
           />
         </View>
@@ -253,6 +252,7 @@ renderFooter(){
   )
 }
 }
+
 HomeScreen.defaultProps = {
   contents: category
 };

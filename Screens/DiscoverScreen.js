@@ -6,15 +6,6 @@ import * as Animatable from 'react-native-animatable';
 import * as theme from '../utils/theme';
 import LinearGradient from 'react-native-linear-gradient';
 
-
-
-
-
-
-
-
-
-
 export default class DiscoverScreen extends Component {
 
   constructor(){

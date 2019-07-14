@@ -29,3 +29,9 @@ gradlew clean
 cd ..
 react-native run-android
 ```
+
+![Error2 Image](/web/images/error2.PNG)
+## Just run the application again:
+```
+react-native run-android
+```
