@@ -6,13 +6,14 @@ import {
   Animated,
   Image,
   Dimensions,
-  TouchableOpacity,
+  TouchableOpacity
 } from "react-native";
 
 import MapView from "react-native-maps";
+import firebase from 'react-native-firebase';
+import { ActivityIndicator } from "react-native-paper";
 
-
-
+/*
 const Images = [
   require('../Assets/Image/AngkorWatPreview.jpg'),
   require('../Assets/Image/AngkorWatPreview.jpg'),
@@ -20,6 +21,7 @@ const Images = [
   require('../Assets/Image/AngkorWatPreview.jpg'),
   require('../Assets/Image/AngkorWatPreview.jpg'),
 ]
+*/
 
 const { width, height } = Dimensions.get("window");
 
@@ -31,67 +33,72 @@ const LATITUDE_DELTA = 0.0043 //zoom level
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO
 
 export default class screens extends Component {
-  state = {
-    markers: [
-      {
-        coordinate: {
-          latitude: 13.412471,
-          longitude: 103.866995,
+  constructor() {
+    super();
+    this.state = {
+      loading: true,
+      markers: null,/*[
+        {
+          coordinate: {
+            latitude: 13.412471,
+            longitude: 103.866995,
+          },
+          title: "Angkor Wat",
+          description: "This is the best place in Portland",
+          image: Images[0],
         },
-        title: "Angkor Wat",
-        description: "This is the best place in Portland",
-        image: Images[0],
-      },
-      {
-        coordinate: {
-          latitude: 13.412990,
-          longitude: 103.867857,
+        {
+          coordinate: {
+            latitude: 13.412990,
+            longitude: 103.867857,
+          },
+          title: "Vishnu Conquers Demons Gallery",
+          description: "This is the second best place in Portland",
+          image: Images[1],
         },
-        title: "Vishnu Conquers Demons Gallery",
-        description: "This is the second best place in Portland",
-        image: Images[1],
-      },
-      {
-        coordinate: {
-          latitude: 13.412504,
-          longitude: 103.865490,
+        {
+          coordinate: {
+            latitude: 13.412504,
+            longitude: 103.865490,
+          },
+          title: "Terrace of Honor",
+          description: "This is the third best place in Portland",
+          image: Images[2],
         },
-        title: "Terrace of Honor",
-        description: "This is the third best place in Portland",
-        image: Images[2],
-      },
-      {
-        coordinate: {
-          latitude: 13.413021,
-          longitude: 103.865874,
+        {
+          coordinate: {
+            latitude: 13.413021,
+            longitude: 103.865874,
+          },
+          title: "Battle of Lanka Gallery",
+          description: "This is the fourth best place in Portland",
+          image: Images[3],
         },
-        title: "Battle of Lanka Gallery",
-        description: "This is the fourth best place in Portland",
-        image: Images[3],
-      },
-      {
-        coordinate: {
-          latitude: 13.412495,
-          longitude: 103.866410,
+        {
+          coordinate: {
+            latitude: 13.412495,
+            longitude: 103.866410,
+          },
+          title: "Second Gallery",
+          description: "This is the fifth best place in Portland",
+          image: Images[4],
         },
-        title: "Second Gallery",
-        description: "This is the fifth best place in Portland",
-        image: Images[4],
+      ],*/
+      region: {
+        latitude: 13.412478,
+        longitude: 103.866995,
+        latitudeDelta: LATITUDE_DELTA,
+        longitudeDelta: LONGITUDE_DELTA,
       },
-    ],
-    region: {
-      latitude: 13.412478,
-      longitude: 103.866995,
-      latitudeDelta: LATITUDE_DELTA,
-      longitudeDelta: LONGITUDE_DELTA,
-    },
-  };
+    };
+  }
 
   componentWillMount() {
     this.index = 0;
     this.animation = new Animated.Value(0);
   }
-  componentDidMount() {
+
+  async componentDidMount() {
     // We should detect when scrolling has stopped then animate
     // We should just debounce the event listener here
     this.animation.addListener(({ value }) => {
@@ -119,9 +126,32 @@ export default class screens extends Component {
         }
       }, 10);
     });
+
+    // temp array
+    const markers_ = [];
+
+    // reading data from cloud firestore
+    await firebase.firestore().collection('markers').get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          markers_.push(doc.data());
+        });
+    })
+    .then(() => this.setState({markers: markers_, loading: false}))
+    .catch(function(error) { // handle error
+      console.log('There has been a problem with your fetch operation: ' + error.message);
+    });
+
+    //console.log(this.state.markers);// can be removed
   }
 
   render() {
+    if (this.state.loading) {
+      return (
+        <ActivityIndicator />
+      );
+    }
+
     const interpolations = this.state.markers.map((marker, index) => {
       const inputRange = [
         (index - 1) * CARD_WIDTH,
@@ -202,7 +232,7 @@ export default class screens extends Component {
               key={index}
             >
               <Image
-                source={marker.image}
+                source={{uri: marker.image}}
                 style={styles.cardImage}
                 resizeMode="cover"
               />

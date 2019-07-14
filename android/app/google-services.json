@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "33587474971",
+    "firebase_url": "https://travelangkor-a31f2.firebaseio.com",
+    "project_id": "travelangkor-a31f2",
+    "storage_bucket": "travelangkor-a31f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33587474971:android:95e51b95519ce6fa",
+        "android_client_info": {
+          "package_name": "com.travelguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33587474971-dg4pula42c3e1i1ok1t0klpfn6gkvhk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEooMFuqtrQZAgOby921Ly2MBNvpvRXPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "33587474971-dg4pula42c3e1i1ok1t0klpfn6gkvhk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
