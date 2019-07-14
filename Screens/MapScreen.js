@@ -106,6 +106,7 @@ export default class screens extends Component {
       if (index >= this.state.markers.length) {
         index = this.state.markers.length - 1;
       }
+      
       if (index <= 0) {
         index = 0;
       }
