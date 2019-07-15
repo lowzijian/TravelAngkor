@@ -32,7 +32,7 @@ const category = [
     title: 'History',
     preview: require('../Assets/Image/HistoryPreview.jpg'),
     caption:'intro to Khmer civilisation',
-    description:'',
+    description:'Angkor Wat is the largest religious monument in the world which translates to “City Temple”. It was originally built in the first half of the 12th century as a Hindu temple during the reign of King Suryavarman II. This was the zenith of cultural, religious and artistic development of the Khmer civilisation. The construction took an estimated 30 years to complete. Angkor Wat is a prime example of the temple-mountain concept. It was constructed in the image of Mount Meru, the sacred mountain in Hindu mythology. The central tower, rising 65 metres above the ground, symbolizes the central peak of Mount Meru and the four supporting towers represent the four surrounding peaks.',
   },
   {
     id: 3,

@@ -25,7 +25,21 @@ export default class DiscoverScreen extends Component {
       {time: '877', title: 'Indravarman I becomes king, orders construction of Preah Ko and Bakhongtemples.', description: ''},
       {time: '889', title: 'Yashovarman I is crowned, rules until 900, completes Lolei, Indratataka, and Eastern Baray (reservoir), and builds Phnom Bakheng temple.', description: ''},
       {time: '899', title: 'Yasovarman I becomes king, rules until 917, establishes capital Yasodharapura on Angkor Wat site.', description: ''},
-      {time: '928', title: 'Rajendravarman crowned, builds Eastern Mebon and Pre Rup.', description: ''}
+      {time: '928', title: 'Jayavarman IV takes throne, establishes capital at Lingapura (Koh Ker).', description: ''},
+      {time: '944', title: 'Rajendravarman crowned, builds Eastern Mebon and Pre Rup.', description: ''},
+      {time: '967', title: 'Delicate Banteay Srei temple built.', description: ''},
+      {time: '968', title: ' Reign of Jayavarman V, starts work on Ta Keo temple but never finishes it.', description: ''},
+      {time: '1002', title: 'Khmer civil war between Jayaviravarman and Suryavarman I, construction begins on Western Baray.', description: ''},
+      {time: '1002', title: 'Suryavarman I wins civil war, rules until 1050.', description: ''},
+      {time: '1050', title: 'Udayadityavarman II takes throne, builds Baphuon.', description: ''},
+      {time: '1060', title: 'Western Baray reservoir finished.', description: ''},
+      {time: '1080', title: 'Mahidharapura Dynasty founded by Jayavarman VI, who builds Phimai temple.', description: ''},
+      {time: '1113', title: 'Suryavarman II was crowned king, rules until 1150, designs Angkor Wat.', description: ''},
+      {time: '1140', title: 'Construction begins on Angkor Wat.', description: ''},
+      {time: '1177', title: 'Angkor sacked by the Chams people from southern Vietnam, partially burned, Khmer king killed.', description: ''},
+      {time: '1181', title: 'Jayavarman VII, famous for defeating Chams, becomes king, sacks Chams capital in reprisal in 1191.', description: ''},
+      {time: '1186', title: 'Jayavarman VII builds Ta Prohm in honor of his mother.', description: ''},
+      {time: '1191', title: 'Jayavarman VII dedicates Preah Khan to his father.', description: ''}
     ]
    }
 
@@ -34,7 +48,7 @@ export default class DiscoverScreen extends Component {
   render() {
     const { navigation } = this.props;
     const discoverArticle = navigation.getParam('discoverItem');
-    const historyScreen = this.renderHistory(this.data);
+    const historyScreen = this.renderHistory(discoverArticle);
     const sightsScreen = this.renderSights(discoverArticle);
     const cultureScreen = this.renderCulture(discoverArticle);
     const beforyougoScreen = this.renderBefore(discoverArticle);
@@ -96,11 +110,12 @@ export default class DiscoverScreen extends Component {
   }
 
   
-  renderHistory(data){
+  renderHistory(history){
     return(
       <View>
          <View style={theme.styling.contentContainer}>
           <Text style={theme.styling.title2}>About </Text>
+          <Text style={theme.styling.description}>{history.description}</Text>
         </View>
         <View style={theme.styling.timelineContainer}>
           <Timeline 
@@ -108,7 +123,7 @@ export default class DiscoverScreen extends Component {
             lineColor='rgb(106, 69, 74)'
             innerCircle={'dot'}
             timeContainerStyle={{minWidth:52, marginTop: 0}}
-            data= {data}
+            data= {this.data}
             separator={false}
             timeStyle={{color:'black', fontWeight:'bold'}}
             detailContainerStyle={theme.styling.timelineDetailContainer}
