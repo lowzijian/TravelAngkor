@@ -247,7 +247,7 @@ renderHeader(){
 renderFooter(){
   return(
     <View style={theme.styling.footer}>
-      <Text style={{color:theme.colors.white,fontSize:10}}>TravelAngkor &#174; Version 1.9</Text> 
+      <Text style={{color:theme.colors.white,fontSize:10}}>TravelAngkor &#174; Version 1.10</Text> 
     </View>
   )
 }
