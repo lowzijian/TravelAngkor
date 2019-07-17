@@ -6,15 +6,6 @@ import * as Animatable from 'react-native-animatable';
 import * as theme from '../utils/theme';
 import LinearGradient from 'react-native-linear-gradient';
 
-
-
-
-
-
-
-
-
-
 export default class DiscoverScreen extends Component {
 
   constructor(){
@@ -143,7 +134,7 @@ export default class DiscoverScreen extends Component {
         </View>
         <View>
         <Text style={theme.styling.title2}>Explore Now</Text>
-          <TouchableOpacity activeOpacity={0.8} onPress={() => this.props.navigation.navigate('Search')}>
+          <TouchableOpacity activeOpacity={0.8} onPress={() => this.props.navigation.navigate(('Search'), { type: 'grand' })}>
               <ImageBackground   
               style={[theme.styling.flex, theme.styling.DefaultContainer, theme.styling.shadow]}
               imageStyle={{ borderRadius: theme.sizes.radius }}
@@ -156,7 +147,7 @@ export default class DiscoverScreen extends Component {
             </TouchableOpacity>
       </View>
       <View>
-          <TouchableOpacity activeOpacity={0.8} onPress={() => this.props.navigation.navigate('Search')}>
+          <TouchableOpacity activeOpacity={0.8} onPress={() => this.props.navigation.navigate(('Search'), { type: 'small' })}>
               <ImageBackground   
               style={[theme.styling.flex, theme.styling.DefaultContainer, theme.styling.shadow]}
               imageStyle={{ borderRadius: theme.sizes.radius }}
@@ -164,7 +155,7 @@ export default class DiscoverScreen extends Component {
                 <View>
                     <Text style={theme.styling.containerTitle}>Small Circuit </Text>
                     <Text style={theme.styling.containerSubtitle}>Steps into the boundary of fascinating cultures</Text>
-                </View> 
+                </View>
               </ImageBackground>
             </TouchableOpacity>
       </View>

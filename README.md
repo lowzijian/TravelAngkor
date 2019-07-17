@@ -20,6 +20,7 @@ react-native run-android
 ```
 
 # If you see the error below...
+1. 
 ![Error1 Image](/web/images/error1.PNG)
 
 ## Close the application and run these commands:
@@ -27,5 +28,12 @@ react-native run-android
 cd android
 gradlew clean
 cd ..
+react-native run-android
+```
+
+2. 
+![Error2 Image](/web/images/error2.PNG)
+## Just run the application again:
+```
 react-native run-android
 ```

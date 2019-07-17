@@ -4,9 +4,6 @@ import HeaderImageScrollView from 'react-native-image-header-scroll-view';
 import * as theme from '../utils/theme';
 import LinearGradient from 'react-native-linear-gradient';
 
-
-
-
 export default class DiscoverScreen extends Component {
 
 
@@ -19,7 +16,7 @@ export default class DiscoverScreen extends Component {
       showsVerticalScrollIndicator={false}
       maxHeight={theme.MAX_HEIGHT}
       minHeight={theme.MIN_HEIGHT}
-      renderHeader={() => <Image source={sight.preview} style={theme.styling.backgroundImage} />}>
+      renderHeader={() => <Image source={{uri: sight.preview}} style={theme.styling.backgroundImage} />}>
       
         <LinearGradient colors={['black', '#4D4D4D', '#A6A6A6']}>
                 <View style={[theme.styling.contentHeight,{height:500}]}>
