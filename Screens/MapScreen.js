@@ -13,16 +13,6 @@ import MapView from "react-native-maps";
 import firebase from 'react-native-firebase';
 import { ActivityIndicator } from "react-native-paper";
 
-/*
-const Images = [
-  require('../Assets/Image/AngkorWatPreview.jpg'),
-  require('../Assets/Image/AngkorWatPreview.jpg'),
-  require('../Assets/Image/AngkorWatPreview.jpg'),
-  require('../Assets/Image/AngkorWatPreview.jpg'),
-  require('../Assets/Image/AngkorWatPreview.jpg'),
-]
-*/
-
 const { width, height } = Dimensions.get("window");
 
 const CARD_HEIGHT = height / 4;
@@ -37,53 +27,7 @@ export default class screens extends Component {
     super();
     this.state = {
       loading: true,
-      markers: null,/*[
-        {
-          coordinate: {
-            latitude: 13.412471,
-            longitude: 103.866995,
-          },
-          title: "Angkor Wat",
-          description: "This is the best place in Portland",
-          image: Images[0],
-        },
-        {
-          coordinate: {
-            latitude: 13.412990,
-            longitude: 103.867857,
-          },
-          title: "Vishnu Conquers Demons Gallery",
-          description: "This is the second best place in Portland",
-          image: Images[1],
-        },
-        {
-          coordinate: {
-            latitude: 13.412504,
-            longitude: 103.865490,
-          },
-          title: "Terrace of Honor",
-          description: "This is the third best place in Portland",
-          image: Images[2],
-        },
-        {
-          coordinate: {
-            latitude: 13.413021,
-            longitude: 103.865874,
-          },
-          title: "Battle of Lanka Gallery",
-          description: "This is the fourth best place in Portland",
-          image: Images[3],
-        },
-        {
-          coordinate: {
-            latitude: 13.412495,
-            longitude: 103.866410,
-          },
-          title: "Second Gallery",
-          description: "This is the fifth best place in Portland",
-          image: Images[4],
-        },
-      ],*/
+      markers: null,
       region: {
         latitude: 13.412478,
         longitude: 103.866995,

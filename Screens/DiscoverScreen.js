@@ -203,8 +203,8 @@ export default class DiscoverScreen extends Component {
            list.details.map((item, index) => {
            return ( 
            <View key={index} style= {[theme.styling.row]}> 
-             <Text style={[theme.styling.h1, {justifyContent: 'flex-start',paddingRight:10}]}>{index + 1}.</Text>
-             <Text style={[theme.styling.h1, {justifyContent: 'flex-end'}]}>{item}</Text>
+             <Text style={[theme.styling.h1, {justifyContent: 'flex-start'}]}>{index + 1}.</Text>
+             <Text style={[theme.styling.h1, {justifyContent: 'flex-end',paddingHorizontal:15}]}>{item}</Text>
            </View>
            )
            })
