@@ -98,6 +98,8 @@ export default class HomeScreen extends Component {
 // parent render with scrollview function component
   render() { 
     return (
+      <View>
+    
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{flex:0}}
@@ -109,6 +111,7 @@ export default class HomeScreen extends Component {
         {this.renderMap()}
         {this.renderFooter()}
       </ScrollView>
+      </View>
     )
   }
 
@@ -117,21 +120,18 @@ export default class HomeScreen extends Component {
 //reader header
 renderHeader(){
   return(     
-  <View style={[theme.styling.flex, theme.styling.row, theme.styling.header]}>
-    <View>
-       <Text style={{fontSize:18,fontWeight:'500',padding:2}}> Welcome to TravelAngkor</Text>
-    </View>
-    <View>
-      <Image style={[theme.styling.avatar]} source={{ uri: 'https://randomuser.me/api/portraits/women/32.jpg'}} />
-    </View>
-  </View>)
+  <View style={theme.styling.header}>
+   <Text style={{color:theme.colors.white,fontSize:25,fontWeight:"500"}}>TravelAngkor</Text>
+   <Text style={{color:theme.colors.white,fontSize:10}}>The Ultimate Angkor Wat Guide : Everything you need </Text>
+  </View>
+  )
 }
 // render the content of weather and location
   renderWeather() {
     const { isLoading } = this.state;
     return (
 
-        <View style={[theme.styling.weatherContainer, theme.styling.shadow]}>
+        <View style={[theme.styling.weatherContainer]}>
           <View style={theme.styling.location}>
             <Text style={{fontSize:25,fontWeight:'bold'}}>Angkor</Text>
             <Text style={{fontSize:12}}>Siem Reap , Cambodia</Text>
@@ -247,7 +247,7 @@ renderHeader(){
 renderFooter(){
   return(
     <View style={theme.styling.footer}>
-      <Text style={{color:theme.colors.white,fontSize:10}}>TravelAngkor &#174; Version 1.10</Text> 
+      <Text style={{color:theme.colors.white,fontSize:10}}>TravelAngkor &#174; Version 1.11</Text> 
     </View>
   )
 }

@@ -53,12 +53,16 @@ const colors = {
 
   // Header styling
   header: {
-    backgroundColor: colors.white,
-    paddingHorizontal: sizes.padding,
-    paddingTop: sizes.padding * 1.33,
-    paddingBottom: sizes.padding * 0.66,
-    justifyContent: 'space-between',
     alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor:'rgb(31, 34, 36)',
+    padding:15,
+    height:100,
+    borderBottomLeftRadius:45,
+    borderBottomRightRadius:45,
+
+    
+  
   },
   shadow: {
     shadowColor: colors.black,
@@ -167,7 +171,8 @@ const colors = {
     borderLeftColor: colors.white,
     borderLeftWidth: 3,
     borderRadius:15,
-    margin:2
+    margin:2,
+    color:'rgb(31, 34, 36)'
   },
 
 
@@ -205,13 +210,7 @@ const colors = {
   },
 
 
-  //avatar for login - user
-   avatar: {
-    width: sizes.padding*1.5,
-    height: sizes.padding*1.5,
-    borderRadius: sizes.padding / 2,
-    borderColor:'rgb(242, 246, 248)',
-  },
+
 
   //information Container
   infoContainer:{
@@ -246,7 +245,8 @@ const colors = {
       marginHorizontal: sizes.margin,
       borderRadius: sizes.radius,
       backgroundColor:'rgb(242, 246, 248)',
-      marginVertical:14
+      marginVertical:14,
+      marginTop:15
     },
    location: {
       flex:1,
