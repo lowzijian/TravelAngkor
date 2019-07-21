@@ -11,8 +11,6 @@ export default class SearchScreen extends Component {
     super(props);
     const { navigation } = this.props;
     this.type = navigation.getParam('type');
-
-
     this.sightholder = null;
 
     this.state = {
