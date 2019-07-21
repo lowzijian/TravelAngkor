@@ -4,7 +4,6 @@ import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header
 import Timeline from 'react-native-timeline-listview';
 import * as Animatable from 'react-native-animatable';
 import * as theme from '../utils/theme';
-import LinearGradient from 'react-native-linear-gradient';
 
 export default class DiscoverScreen extends Component {
 
@@ -69,8 +68,8 @@ export default class DiscoverScreen extends Component {
       maxHeight={theme.MAX_HEIGHT}
       minHeight={theme.MIN_HEIGHT}
       maxOverlayOpacity={0.6}
-      minOverlayOpacity={0.3}
-      fadeOutForeground    
+      minOverlayOpacity={0.0}
+      scrollViewBackgroundColor= "transparent"
       renderForeground={() => (
           <View style={theme.styling.titleContainer}>
             <Text style={theme.styling.imageTitle}>{discoverArticle.title}</Text>
@@ -86,16 +85,14 @@ export default class DiscoverScreen extends Component {
         <Text style={theme.styling.navTitle}>{discoverArticle.title} </Text>
         </Animatable.View>
       )} >
-    <LinearGradient colors={['black', '#4D4D4D', '#A6A6A6']}>
         <TriggeringView
               onHide={() => this.navTitleView.fadeInUp(200)}
               onDisplay={() => this.navTitleView.fadeOut(100)}>
-              </TriggeringView>
+        </TriggeringView>
 
-               <View style={theme.styling.contentHeight}>
-               {screen}
-               </View>
-      </LinearGradient>
+          <View style={theme.styling.contentHeight}>
+            {screen}
+          </View>
         </HeaderImageScrollView>
     );
   }
@@ -104,7 +101,7 @@ export default class DiscoverScreen extends Component {
   renderHistory(history){
     return(
       <View>
-         <View style={theme.styling.contentContainer}>
+        <View style={theme.styling.contentContainer}>
           <Text style={theme.styling.title2}>About </Text>
           <Text style={theme.styling.description}>{history.description}</Text>
         </View>

@@ -2,6 +2,7 @@ import {StyleSheet,Dimensions} from 'react-native'
 import { Header } from 'react-navigation';
 
 
+
 const MIN_HEIGHT =Header.HEIGHT+50;
 const MAX_HEIGHT =350;
 
@@ -57,9 +58,9 @@ const colors = {
     justifyContent: 'center',
     backgroundColor:'rgb(31, 34, 36)',
     padding:15,
-    height:100,
-    borderBottomLeftRadius:45,
-    borderBottomRightRadius:45,
+    height:120,
+    borderBottomLeftRadius:15,
+    borderBottomRightRadius:15,
 
     
   
@@ -246,7 +247,7 @@ const colors = {
       borderRadius: sizes.radius,
       backgroundColor:'rgb(242, 246, 248)',
       marginVertical:14,
-      marginTop:15
+      marginTop:25
     },
    location: {
       flex:1,
@@ -321,19 +322,16 @@ const colors = {
 
     // styling for the scroll view content
     backgroundImage: {
+      height:MAX_HEIGHT,
       width: width,
-      height: MAX_HEIGHT,
       resizeMode: 'cover',
-      alignSelf: 'stretch'
+      alignSelf: 'stretch',
     },
 
     contentHeight:{
     borderRadius: sizes.radius*1.5,
-    backgroundColor:colors.white,
-    width: width-5,
-    marginLeft:2,
-    marginRight:2,
-    marginVertical:3
+    marginVertical:3,
+    backgroundColor:colors.white
 
     },
 
@@ -349,7 +347,8 @@ const colors = {
       backgroundColor: 'transparent',
       fontSize: 24,
       fontWeight:'500',
-      opacity:0.8
+      opacity:0.9,
+
     },
 
     navTitleView: {

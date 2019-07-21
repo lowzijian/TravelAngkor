@@ -12,6 +12,7 @@ import {setIcons} from '../utils/setIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import * as theme from '../utils/theme';
 import SplashScreen from 'react-native-splash-screen'
+import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view';
 
 
 
@@ -98,37 +99,48 @@ export default class HomeScreen extends Component {
 // parent render with scrollview function component
   render() { 
     return (
+    <HeaderImageScrollView
+      maxHeight={120}
+      minHeight={0}
+      foregroundParallaxRatio={2}
+      maxOverlayOpacity={0}
+      fadeOutForeground
+      showsVerticalScrollIndicator={false}
+      renderForeground={() => (
+        <View style={theme.styling.header}>
+        <Text style={{color:theme.colors.white,fontSize:25,fontWeight:"500"}}>TravelAngkor</Text>
+        <Text style={{color:theme.colors.white,fontSize:10}}>The Ultimate Angkor Wat Guide : Everything you need </Text>
+       </View>
+      )}
+    >
       <View>
-    
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{flex:0}}
-      >
-        {this.renderHeader()}
+        <TriggeringView>
+        {this.renderContent()}
+        </TriggeringView>
+      </View>
+    </HeaderImageScrollView>
+    )
+  }
+
+  renderContent () {
+    return(
+      <View>
         {this.renderWeather()}
         {this.renderDestination()}
         {this.renderDiscovered()}
         {this.renderMap()}
         {this.renderFooter()}
-      </ScrollView>
       </View>
     )
   }
+    
+  
 
 //child render component
 
-//reader header
-renderHeader(){
-  return(     
-  <View style={theme.styling.header}>
-   <Text style={{color:theme.colors.white,fontSize:25,fontWeight:"500"}}>TravelAngkor</Text>
-   <Text style={{color:theme.colors.white,fontSize:10}}>The Ultimate Angkor Wat Guide : Everything you need </Text>
-  </View>
-  )
-}
+
 // render the content of weather and location
   renderWeather() {
-    const { isLoading } = this.state;
     return (
 
         <View style={[theme.styling.weatherContainer]}>

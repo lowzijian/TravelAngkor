@@ -4,26 +4,51 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { Text, View , ImageBackground,Image } from 'react-native';
 import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view';
 import * as Animatable from 'react-native-animatable';
-import LinearGradient from 'react-native-linear-gradient';
 import * as theme from '../utils/theme';
 
 
 const pinpointSight = [
   {
     id: 1,
-    title: 'Bayon',
-    preview: require('../Assets/Image/BayonPreview.jpg'),
-  },
+    title: 'Bayon Temple',
+    category:'Grand Circuit'
+    },
   {
     id: 2,
     title: 'Ta Prohm',
-    preview: require('../Assets/Image/TaProhmPreview.jpg'),
+    category:'Small Circuit'
   },
   {
     id: 3,
     title: 'Angkor Wat',
-    preview: require('../Assets/Image/AngkorWatPreview.jpg'),
-  }
+    category:'Grand Circuit'
+  },
+  {
+    id: 4,
+    title: 'Banteay Srei',
+    category:'Grand Circuit'
+  },
+  {
+    id: 5,
+    title: 'Phnom Bakheng',
+    category:'Grand Circuit'
+  },
+  {
+    id: 6,
+    title: 'Prasat Suor prat',
+    category:'Small Circuit'
+  },
+  {
+    id: 7,
+    title: 'Prasat Phnom Bok',
+    category:'Grand Circuit'
+  },
+  {
+    id: 8,
+    title: 'Preah Ko',
+    category:'Grand Circuit'
+  },
+
 ]
 
   
@@ -41,18 +66,9 @@ const pinpointSight = [
 
 _renderItem ({item, index}, parallaxProps) {
   return (
-      <View style={{borderRadius:theme.sizes.radius}}>
-          <ImageBackground
-              source={item.preview}
-              style={theme.styling.carouselItem1}
-              imageStyle={{
-                borderRadius:5,  
-              }}
-              parallaxFactor={0.6}
-              {...parallaxProps}
-          >
-          <Text style={theme.styling.imageName}>{item.title}</Text>
-          </ImageBackground>
+      <View style={{borderRadius:theme.sizes.radius, backgroundColor:'rgb(242, 246, 248)',alignItems:"center", padding:5}}>
+          <Text style={{fontSize:15,fontWeight:"500"}}>{item.title}</Text>
+          <Text style={theme.styling.caption}>{item.category}</Text>
       </View>
   );
 }
@@ -60,20 +76,19 @@ _renderItem ({item, index}, parallaxProps) {
   
     render() {
       return (
-        
           <HeaderImageScrollView
             showsVerticalScrollIndicator={false}
             maxHeight={theme.MAX_HEIGHT}
             minHeight={theme.MIN_HEIGHT}
             maxOverlayOpacity={0.6}
-            minOverlayOpacity={0.3}
-            fadeOutForeground    
+            minOverlayOpacity={0.0} 
+            scrollViewBackgroundColor= "transparent"
             renderForeground={() => (
                 <View style={theme.styling.titleContainer}>
                   <Text style={theme.styling.imageTitle}>Welcome to Angkor</Text>
                 </View>
               )}
-            renderHeader={() => <Image source={require('../Assets/Image/Angkor.jpg')} style={theme.styling.image} />}
+            renderHeader={() =>(<Image source={require('../Assets/Image/Angkor.jpg')}  style={theme.styling.backgroundImage}/>)}
             renderFixedForeground={() => (
               <Animatable.View
                 style={theme.styling.navTitleView} 
@@ -83,8 +98,7 @@ _renderItem ({item, index}, parallaxProps) {
               <Text style={theme.styling.navTitle}>Welcome to Angkor </Text>
               </Animatable.View>
             )} >
-             
-           <LinearGradient colors={['black', '#4D4D4D', '#A6A6A6']}>
+
 
               <TriggeringView
               onHide={() => this.navTitleView.fadeInUp(200)}
@@ -136,16 +150,15 @@ _renderItem ({item, index}, parallaxProps) {
 
                     <View style={[theme.styling.contentContainer,{marginBottom:15}]}>
                         <Text style={theme.styling.title2}>Sights </Text> 
-                        <View  style={{alignContent:'center',alignItems:'center'}}>
+                        <View style = {{alignContent:"center",alignItems:'center'}}>
                           <Carousel
-                          layout={'tinder'} layoutCardOffset={8} 
+                          layout={'stack'} layoutCardOffset={0} 
                           ref={(c) => { this._carousel = c; }}
                           data={this.state.sight}
                           renderItem={this._renderItem}
-                          sliderWidth={theme.width}
-                          itemWidth={ theme.width - 60}
-                          hasParallaxImages={true}
-                          inactiveSlideOpacity={0.2}
+                          vertical ={true}
+                          itemHeight = {50}
+                          sliderHeight={50}
                           loop={true}
                           autoplay={true}
                           lockScrollWhileSnapping={true}
@@ -153,7 +166,6 @@ _renderItem ({item, index}, parallaxProps) {
                       </View>
                   </View>
                </View>
-            </LinearGradient>
           </HeaderImageScrollView>
       );
     }
