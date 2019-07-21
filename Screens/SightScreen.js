@@ -47,7 +47,7 @@ export default class DiscoverScreen extends Component {
                   <Text style={theme.styling.description}>{sight.description}</Text>
               </View>
               <View style={[theme.styling.contentContainer,{marginTop:25}]}>
-                  <Button  type="outline" title= {this.state.isVisited ? 'Visit' : 'Visited'} buttonStyle = {[{borderColor:"grey", backgroundColor:this.state.isVisited ? 'white' : 'grey',borderRadius:theme.sizes.radius} ,theme.styling.shadow]} titleStyle ={{color:this.state.isVisited ? 'grey' : 'white'}}
+                  <Button  type="outline" title= {this.state.isVisited ? 'Visited' : 'Visit'} buttonStyle = {[{borderColor:"grey", backgroundColor:this.state.isVisited ? 'white' : 'grey',borderRadius:theme.sizes.radius} ,theme.styling.shadow]} titleStyle ={{color:this.state.isVisited ? 'grey' : 'white'}}
                      onPress={() =>{this.toggleVisited()}}/>
               </View>
         </View>
