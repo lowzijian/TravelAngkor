@@ -14,31 +14,46 @@ export default class SightScreen extends Component {
     super(props);
     this.toggleVisited = this.toggleVisited.bind(this);
 
-  this.state ={
+    this.state ={
       sight: this.props.navigation.getParam('sight'),
-      isVisited:0}
+      isVisited: 0}
   }
 
   componentDidMount() {
     this.getIsVisited();
   }
+
   componentWillUnmount(){
+    console.log("trigger component willUnmount");
+    console.log(this.state.isVisited);
+
     this.updateVisited();
   }
 
   toggleVisited() {
+    let isVisited = '';
+
+    if(this.state.isVisited == 0){
+      isVisited = 1;
+     
+    }
+    else{
+      isVisited = 0;
+    }
+
     this.setState({
-      isVisited: !this.state.isVisited
+      isVisited,
     })
+
   }
 
   getIsVisited() {
     let visitToggle = 0
     db.isVisitedByTitle(this.state.sight.title).then((data) => {
       visitToggle = data;
-      console.log(visitToggle)
+      console.log(visitToggle.isVisited)
       this.setState({
-        isVisited:visitToggle
+        isVisited:visitToggle.isVisited
       })
     }).catch((err) => {
     console.log(err);
@@ -48,7 +63,7 @@ export default class SightScreen extends Component {
 }
 
 updateVisited(){
-  db.updateSightVisited(this.state.isVisited)
+  db.updateSightVisited(this.state.isVisited, this.state.sight.title)
 }
 
   render() {
@@ -79,8 +94,4 @@ updateVisited(){
     </HeaderImageScrollView>
     );
   }
-
- 
-
 }
-

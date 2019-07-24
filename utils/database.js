@@ -23,9 +23,10 @@ export default class Database {
 isVisitedByTitle(title) {
     console.log(title);
     return new Promise((resolve) => {
-        SQLite.openDatabase({name: 'sightdb', createFromLocation : '~db.sqlite'}).then((DB) => {
+        SQLite.openDatabase({name: 'sightdb', createFromLocation : '~sightdb.sqlite'}).then((DB) => {
         db = DB;
         db.transaction((tx) => {
+          console.log("Before Query completed");
           tx.executeSql('SELECT isVisited FROM sights WHERE title = ?', [title]).then(([tx,results]) => {
             console.log("Query completed");
             console.log(results);
@@ -45,9 +46,10 @@ isVisitedByTitle(title) {
       });
     });  
   }
+
   updateSightVisited(isVisited, title) {
     return new Promise((resolve) => {
-      SQLite.openDatabase({name: 'sightdb', createFromLocation : '~db.sqlite'}).then((DB) => {
+      SQLite.openDatabase({name: 'sightdb', createFromLocation : '~sightdb.sqlite'}).then((DB) => {
         db = DB;
         db.transaction((tx) => {
           tx.executeSql('UPDATE sights SET isVisited = ? WHERE title = ?', [isVisited, title]).then(([tx, results]) => {
