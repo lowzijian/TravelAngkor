@@ -1,80 +1,76 @@
 import React, { Component } from 'react';
 import Carousel from 'react-native-snap-carousel';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import { Text, View , ImageBackground,Image } from 'react-native';
+import { Text, View , ImageBackground,Image ,ActivityIndicator  } from 'react-native';
 import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view';
 import * as Animatable from 'react-native-animatable';
 import * as theme from '../utils/theme';
-
-
-const pinpointSight = [
-  {
-    id: 1,
-    title: 'Bayon Temple',
-    category:'Grand Circuit'
-    },
-  {
-    id: 2,
-    title: 'Ta Prohm',
-    category:'Small Circuit'
-  },
-  {
-    id: 3,
-    title: 'Angkor Wat',
-    category:'Grand Circuit'
-  },
-  {
-    id: 4,
-    title: 'Banteay Srei',
-    category:'Grand Circuit'
-  },
-  {
-    id: 5,
-    title: 'Phnom Bakheng',
-    category:'Grand Circuit'
-  },
-  {
-    id: 6,
-    title: 'Prasat Suor prat',
-    category:'Small Circuit'
-  },
-  {
-    id: 7,
-    title: 'Prasat Phnom Bok',
-    category:'Grand Circuit'
-  },
-  {
-    id: 8,
-    title: 'Preah Ko',
-    category:'Grand Circuit'
-  },
-
-]
+import firebase from 'react-native-firebase';
 
   
   export default class WelcomeScreen extends Component {
     constructor() {
       super();
+
+
       this.state = { 
       showNavTitle: false ,
-      sight:pinpointSight,
+      sightsHolder:[],    
+      loading:true
    
     }
   }
 
+  async componentDidMount() {
+    // temp array
+    const sights = [];
 
+    // reading data from cloud firestore
+    await firebase.firestore().collection('sights')
+    .get()
+    .then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        sights.push(doc.data());
+      });
+    })
+    .then(() => {
+      this.setState({
+        sightsHolder : sights,
+        loading :  false
+        })
+  
+    })
+    .catch(function(error) { // handle error
+      console.log('There has been a problem with your fetch operation: ' + error.message);
+    });
 
+    console.log(sights);// can be removed
+  }
+ 
 _renderItem ({item, index}, parallaxProps) {
   return (
-      <View style={{borderRadius:theme.sizes.radius, backgroundColor:'rgb(242, 246, 248)',alignItems:"center", padding:5}}>
-          <Text style={{fontSize:15,fontWeight:"500"}}>{item.title}</Text>
-          <Text style={theme.styling.caption}>{item.category}</Text>
+      <View style={{borderRadius:theme.sizes.radius, backgroundColor:'rgb(242, 246, 248)',padding:5}}>
+         <ImageBackground	    
+         source ={{uri: item.preview}}    	          
+         style={theme.styling.carouselItem1}
+         imageStyle = {{borderRadius:theme.sizes.radius}}
+         parallaxFactor={0.6}	
+         {...parallaxProps}>
+          <Text style={theme.styling.carouselImageTitle}>{item.title}</Text>
+          <Text style={theme.styling.carouselImageCaption}>{item.type} circuit</Text>
+          </ImageBackground>
       </View>
   );
 }
 
   
-    render() {
+    
+  render() {
+    if (this.state.loading) {
+      return (
+        <ActivityIndicator />
+      );
+    }
       return (
           <HeaderImageScrollView
             showsVerticalScrollIndicator={false}
@@ -154,11 +150,12 @@ _renderItem ({item, index}, parallaxProps) {
                           <Carousel
                           layout={'stack'} layoutCardOffset={0} 
                           ref={(c) => { this._carousel = c; }}
-                          data={this.state.sight}
+                          data={this.state.sightsHolder}
                           renderItem={this._renderItem}
-                          vertical ={true}
-                          itemHeight = {50}
-                          sliderHeight={50}
+                          sliderWidth={theme.width}	                          
+                          itemWidth={ theme.width - 60}	                         
+                          hasParallaxImages={true}	                         
+                          inactiveSlideOpacity={0.2}
                           loop={true}
                           autoplay={true}
                           lockScrollWhileSnapping={true}

@@ -74,7 +74,7 @@ export default class HomeScreen extends Component {
     };
   }
 
-  componentDidMount(){
+  async componentDidMount(){
 
     //fetch weather data api
     fetch( 'http://api.openweathermap.org/data/2.5/weather?q=Siemreab,KH&APPID=bff7845d8ecf9dbc4e15a7698a46a05f&units=metric')

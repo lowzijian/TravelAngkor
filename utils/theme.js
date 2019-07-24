@@ -130,6 +130,27 @@ const colors = {
 
   },
 
+  carouselImageTitle: {
+    fontSize:18,
+    fontWeight:'500',
+    padding:5,
+    color:colors.white,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)', 
+    textShadowOffset: {width: -1, height: 1}, 
+    textShadowRadius: 10,
+  },
+
+  
+  carouselImageCaption: {
+    fontSize:15,
+    fontWeight:'500',
+    padding:5,
+    color:colors.gray,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)', 
+    textShadowOffset: {width: -1, height: 1}, 
+    textShadowRadius: 10,
+  },
+
   description:{
     fontSize:13,
     paddingVertical:5,
@@ -350,6 +371,8 @@ const colors = {
       opacity:0.9,
 
     },
+
+
 
     navTitleView: {
       height: MIN_HEIGHT-5,
