@@ -55,8 +55,4 @@ export default class DiscoverScreen extends Component {
     </HeaderImageScrollView>
     );
   }
-
- 
-
 }
-

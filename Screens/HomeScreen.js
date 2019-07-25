@@ -14,10 +14,6 @@ import * as theme from '../utils/theme';
 import SplashScreen from 'react-native-splash-screen'
 import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view';
 
-
-
-
-
 //discoverable items
 const category = [
   {
