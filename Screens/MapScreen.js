@@ -173,7 +173,7 @@ export default class screens extends Component {
         >
           {this.state.markers.map((marker, index) => (
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate(('MapSight'), { title: marker.title })}
+              onPress={() => this.props.navigation.navigate(('MapSight'), { sightId: marker.sightId })}
               style={styles.card}
               key={index}
             >
