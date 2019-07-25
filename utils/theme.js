@@ -45,11 +45,13 @@ const colors = {
 
   //Carousel item
   carouselItem1:{
-    width:width - 60,
+    width: width - 70,
     height: (width - (sizes.padding *4)),
     justifyContent: 'center',
     alignItems: 'center',
-    opacity:0.85
+    opacity:0.85,
+    resizeMode: 'cover',
+    alignSelf: 'stretch',
   },
 
   // Header styling

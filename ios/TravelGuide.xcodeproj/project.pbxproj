@@ -62,6 +62,7 @@
 		DE17585D5C0848D7B770F4CF /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F1BDDEF4BE4A1C89440057 /* libRNVectorIcons.a */; };
 		5991E4C195B44DAA85B36D99 /* libRNVectorIcons-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C53B9882E7B6487C803B38B4 /* libRNVectorIcons-tvOS.a */; };
 		7EAEB5598F924C1F8A14209E /* libSQLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B1D1F8E4504415A780EE36 /* libSQLite.a */; };
+		E7CA2D27EB0C4952B2127224 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0863D4B1CDC04C76A468F5F0 /* Fontisto.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -398,6 +399,7 @@
 		C53B9882E7B6487C803B38B4 /* libRNVectorIcons-tvOS.a */ = {isa = PBXFileReference; name = "libRNVectorIcons-tvOS.a"; path = "libRNVectorIcons-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		B55D8179F71541A586F90161 /* SQLite.xcodeproj */ = {isa = PBXFileReference; name = "SQLite.xcodeproj"; path = "../node_modules/react-native-sqlite-storage/src/ios/SQLite.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		E8B1D1F8E4504415A780EE36 /* libSQLite.a */ = {isa = PBXFileReference; name = "libSQLite.a"; path = "libSQLite.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		0863D4B1CDC04C76A468F5F0 /* Fontisto.ttf */ = {isa = PBXFileReference; name = "Fontisto.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -695,6 +697,7 @@
 				45DCE1C098A54392B0623E1A /* Octicons.ttf */,
 				7BB9BA33E078468F938F00C6 /* SimpleLineIcons.ttf */,
 				91CFC7ECCC1D4FC48D5E78E0 /* Zocial.ttf */,
+				0863D4B1CDC04C76A468F5F0 /* Fontisto.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1161,6 +1164,7 @@
 				397D08E381BC423AB1BCCEA5 /* Octicons.ttf in Resources */,
 				05A54AA79C244EB8B13DBD99 /* SimpleLineIcons.ttf in Resources */,
 				9ACD96030D2D4563BFBFDA1B /* Zocial.ttf in Resources */,
+				E7CA2D27EB0C4952B2127224 /* Fontisto.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

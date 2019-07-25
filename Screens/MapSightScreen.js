@@ -6,6 +6,7 @@ import { Button } from 'react-native-elements';
 import firebase from 'react-native-firebase';
 import { ActivityIndicator } from "react-native-paper";
 import Database from '../utils/database';
+import Fontisto from 'react-native-vector-icons/Fontisto'
 
 const db = new Database();
 
@@ -110,8 +111,27 @@ export default class MapSightScreen extends Component {
                         <Text style={theme.styling.description}>{this.state.sight.description}</Text>
                     </View>
                     <View style={[theme.styling.contentContainer,{marginTop:25}]}>
-                        <Button  type="outline" title= {this.state.isVisited ? 'Visited' : 'Visit'} buttonStyle = {[{borderColor:"grey", backgroundColor:this.state.isVisited ? 'lightgrey' : 'white',borderRadius:theme.sizes.radius} ,theme.styling.shadow]} titleStyle ={{color:this.state.isVisited ? 'white' : 'grey'}}
-                            onPress={() =>{this.toggleVisited()}}/>
+                    <Button   type="outline" iconRight title = {this.state.isVisited ? 'Visited' : 'Visit'} 
+                  buttonStyle = {[{borderColor:"grey", backgroundColor:this.state.isVisited ? 'lightgrey' : 'white',borderRadius:theme.sizes.radius} ,theme.styling.shadow]} 
+                  titleStyle ={{color:this.state.isVisited ? 'white' : 'grey',paddingRight:5}}
+                  icon={
+                    
+                    this.state.isVisited ? 
+                    <Fontisto
+                      name="smiley"
+                      size={15}
+                      color="white"
+                     
+                    />
+                    :
+                    <Fontisto
+                    name="slightly-smile"
+                    size={15}
+                    color="grey"
+                  />
+                  }
+                  
+                     onPress={() =>{this.toggleVisited()}}/>
                     </View>
                 </View>
 
