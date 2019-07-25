@@ -19,7 +19,7 @@ const CARD_HEIGHT = height / 4;
 const CARD_WIDTH = CARD_HEIGHT + 80;
 
 const ASPECT_RATIO = width / height
-const LATITUDE_DELTA = 0.0043 //zoom level
+const LATITUDE_DELTA = 0.05 //zoom level
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO
 
 export default class screens extends Component {
@@ -173,6 +173,7 @@ export default class screens extends Component {
         >
           {this.state.markers.map((marker, index) => (
             <TouchableOpacity
+              onPress={() => this.props.navigation.navigate(('MapSight'), { sightId: marker.sightId })}
               style={styles.card}
               key={index}
             >

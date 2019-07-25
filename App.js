@@ -12,12 +12,10 @@ import DiscoverScreen from './Screens/DiscoverScreen';
 import WelcomeScreen from './Screens/WelcomeScreen';
 import SearchScreen from './Screens/SearchScreen';
 import SightScreen from './Screens/SightScreen';
-
+import MapSightScreen from './Screens/MapSightScreen';
 
 //animation in navigation transition
 import { fromRight } from 'react-navigation-transitions';
-
-
 
 const AppNavigator =  createStackNavigator({
   Home: {screen: HomeScreen},
@@ -30,13 +28,14 @@ const AppNavigator =  createStackNavigator({
 
   Search:{ screen: SearchScreen,    },
 
-  Sight:{screen: SightScreen, }
+  Sight:{screen: SightScreen, },
 
+  MapSight:{screen: MapSightScreen, }
 }, {
   transitionConfig: () => fromRight(600),
   initialRouteName: 'Home',
   defaultNavigationOptions:{header:null}
-});   
+});
 
 export default createAppContainer(AppNavigator);
 
